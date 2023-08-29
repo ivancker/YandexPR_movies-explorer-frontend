@@ -1,5 +1,13 @@
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import logo from '../../logo.svg';
 import './App.css';
+import AboutProject from '../Main/AboutProject/AboutProject';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
+import Profile from '../Profile/Profile';
+import SignIn from '../Login/Login';
+import SignUp from '../Register/Register';
 
 function App() {
   return (
@@ -18,6 +26,14 @@ function App() {
           Learn React
         </a>
       </header>
+        {/* <Routes>
+          <Route path="/" element={<AboutProject />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/saved-movies" element={<SavedMovies />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes> */}
     </div>
   );
 }
