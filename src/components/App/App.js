@@ -1,18 +1,23 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import logo from '../../logo.svg';
+// import { Routes, Route } from 'react-router-dom'
+// import logo from '../../logo.svg';
 import './App.css';
-import AboutProject from '../Main/AboutProject/AboutProject';
-import Movies from '../Movies/Movies';
-import SavedMovies from '../SavedMovies/SavedMovies';
-import Profile from '../Profile/Profile';
-import SignIn from '../Login/Login';
-import SignUp from '../Register/Register';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
+// import Movies from '../Movies/Movies';
+// import SavedMovies from '../SavedMovies/SavedMovies';
+// import Profile from '../Profile/Profile';
+// import SignIn from '../Login/Login';
+// import SignUp from '../Register/Register';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header />
+      <Main />
+      <Footer />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -25,9 +30,9 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
         {/* <Routes>
-          <Route path="/" element={<AboutProject />} />
+          <Route path="/" element={<Main />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/saved-movies" element={<SavedMovies />} />
           <Route path="/profile" element={<Profile />} />
