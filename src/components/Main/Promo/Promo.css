@@ -2,9 +2,17 @@
   display: flex;
   height: 574px;
   background-color: #073042;
+  justify-content: space-between;
 }
 
-.promo__title {
+.promo__logo {
+  padding-top: 75px;
+  padding-right: 70px;
+  max-width: 310px;
+  max-height: 304px;
+}
+
+.promo__info_title {
   margin: 0;
   /* margin-top: 75px; */
   /* margin-left: 70px; */
@@ -18,7 +26,33 @@
   text-align: left;
 }
 
-.promo__logo {
+.promo__info_description {
+  margin-top: 36px;
+  margin-bottom: 0px;
   max-width: 310px;
-  max-height: 304px;
+  padding-left: 70px;
+  color: white;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+  text-align: left;
+  opacity: 50%;
+}
+
+.promo__info_getmore-button {
+  margin-left: 70px;
+  margin-top: 146px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 70px;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  width: 129px;
+  height: 36px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, .6);
 }
