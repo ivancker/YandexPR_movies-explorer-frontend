@@ -8,17 +8,17 @@ function Promo() {
   return (
     <section className="promo">
       <div className="promo__info">
-        <h1 className="promo__info_title">
+        <h1 className="promo__info-title">
           Учебный проект студента факультета Веб-разработки.
         </h1>
-        <h3 className="promo__info_description">
+        <h3 className="promo__info-description">
         Листайте ниже, чтобы узнать больше про этот проект и его создателя.
         </h3>
         <Link
-              className="promo__info_getmore-button"
+              className="promo__info-button"
               to="#"
             >
-              <p className="promo__info_getmore-button-text">Узнать больше</p>
+              <p className="promo__info-button-text">Узнать больше</p>
             </Link>
       </div>
       <img
