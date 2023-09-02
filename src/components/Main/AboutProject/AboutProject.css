@@ -1,5 +1,71 @@
 .about-project {
   display: flex;
-  border: 1px solid red;
-  height: 608px;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.about-project__info {
+  padding-top: 70px;
+  display: flex;
+  margin: auto;
+  text-align: left;
+}
+
+.about-project__subtitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+}
+
+.about-project__text{
+  margin: 26px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  display: block;
+  max-width: 550px;
+}
+
+.about-project__time-line{
+  display: grid;
+  grid-template-columns: 228px auto;
+  padding-top: 110px;
+}
+
+.about-project__one-week {
+  height: 36px;
+  background-color: #2BE080;
+  display: flex;
+  justify-content: center;
+}
+
+.about-project__four-week {
+  height: 36px;
+  background-color: #F2F2F2;
+  display: flex;
+  justify-content: center;
+}
+
+.about-project__week-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  align-self: center;
+}
+
+.about-project__text-under {
+  margin: 0;
+  padding-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #A0A0A0;
 }
