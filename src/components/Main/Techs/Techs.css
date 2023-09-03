@@ -1,8 +1,57 @@
 .techs {
   display: flex;
+  margin: auto;
   align-items: center;
   flex-direction: column;
-  padding-top: 110px;
-  padding-bottom: 110px;
-  border: 1px solid red;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f5f5f5;
+}
+
+.techs__title {
+  margin: 0;
+  padding-top: 90px;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.techs__text {
+  margin: auto;
+  padding-top: 26px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  max-width: 460px;
+}
+
+.techs__list {
+  margin: 0;
+  max-width: 1140px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.techs__list-text {
+  background-color: #e8e8e8;
+  list-style-type: none;
+  margin-right: 10px;
+  height: 60px;
+  width: 90px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: -0.04em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.techs__list li:last-child {
+  margin-right: 0;
 }

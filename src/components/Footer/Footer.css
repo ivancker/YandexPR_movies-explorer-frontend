@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 79px;
+  padding-bottom: 20px;
+}
+
+.footer__info {
+  margin: 0;
+  width: 100%;
+  max-width: 1140px;
+}
+
+.footer__about {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #a0a0a0;
+}
+
+.footer__last-line {
+  display: flex;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.footer__copyright {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.footer__yandex {
+  margin: 0;
+  padding-right: 20px;
+}
+
+.footer__github {
+  margin: 0;
+}

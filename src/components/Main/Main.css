@@ -1,4 +1,6 @@
 .section {
+  margin: 0;
+  width: 100%;
   max-width: 1140px;
 }
 
@@ -13,6 +15,10 @@
 
 .section-line {
   border-bottom: 1px solid black;
-  max-width: 1140px;
   margin-top: 23px;
+}
+
+.section-line-grey {
+  border-bottom: 1px solid #e8e8e8;
+  margin-top: 9px;
 }

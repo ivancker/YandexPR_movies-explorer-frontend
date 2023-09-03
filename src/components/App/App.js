@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // import { Routes, Route } from 'react-router-dom'
 // import logo from '../../logo.svg';
 import './App.css';
@@ -31,7 +31,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-        {/* <Routes>
+      {/* <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/saved-movies" element={<SavedMovies />} />

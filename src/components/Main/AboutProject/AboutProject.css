@@ -1,5 +1,6 @@
 .about-project {
   display: flex;
+  margin: auto;
   align-items: center;
   flex-direction: column;
   padding-top: 110px;
@@ -21,17 +22,16 @@
   letter-spacing: -0.04em;
 }
 
-.about-project__text{
+.about-project__text {
   margin: 26px 0px 0px 0px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0em;
   display: block;
-  max-width: 550px;
 }
 
-.about-project__time-line{
+.about-project__time-line {
   display: grid;
   grid-template-columns: 228px auto;
   padding-top: 110px;
@@ -39,14 +39,14 @@
 
 .about-project__one-week {
   height: 36px;
-  background-color: #2BE080;
+  background-color: #2be080;
   display: flex;
   justify-content: center;
 }
 
 .about-project__four-week {
   height: 36px;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
 }
@@ -67,5 +67,5 @@
   font-weight: 500;
   line-height: 17px;
   letter-spacing: 0px;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
