@@ -4,11 +4,11 @@ import arrow from '../../../images/main_link_arrow.svg';
 function AboutMe() {
   return (
     <section className="about-me">
-      <article className="section">
-        <h2 className="section-title">
+      <article className="section about-me__container">
+        <h2 className="section-title about-me__title">
           Студент
         </h2>
-        <div className="section-line"></div>
+        <div className="section-line about-me__line"></div>
         <div className="about-me__info">
           <h3 className="about-me__name">
             Виталий
@@ -44,7 +44,7 @@ function AboutMe() {
         </h5>
         <a
           className="about-me__link"
-          href={'https://google.com'}
+          href={'https://github.com/'}
           target="_blank"
           rel="noreferrer"
           alt="Статичный сайт"
@@ -56,10 +56,10 @@ function AboutMe() {
             alt="Стрелка"
           />
         </a>
-        <div className="section-line-grey"></div>
+        <div className="section-line-grey about-me__line-grey"></div>
         <a
           className="about-me__link"
-          href={'https://google.com'}
+          href={'https://github.com/'}
           target="_blank"
           rel="noreferrer"
           alt="Адаптивный сайт"
@@ -71,10 +71,10 @@ function AboutMe() {
             alt="Стрелка"
           />
         </a>
-        <div className="section-line-grey"></div>
+        <div className="section-line-grey about-me__line-grey"></div>
         <a
           className="about-me__link"
-          href={'https://google.com'}
+          href={'https://github.com/'}
           target="_blank"
           rel="noreferrer"
           alt="Одностраничное приложение"

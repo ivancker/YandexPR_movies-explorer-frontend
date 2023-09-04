@@ -3,9 +3,9 @@ import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 
-function Main() {
+function Landing() {
   return (
-    <main className="main">
+    <main className="landing">
       <Promo />
       <AboutProject />
       <Techs />
@@ -14,4 +14,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Landing;

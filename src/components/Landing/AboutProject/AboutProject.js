@@ -1,11 +1,11 @@
 function AboutProject() {
   return (
     <section className="about-project">
-      <article className="section">
-        <h2 className="section-title">
+      <article className="section about-project__container">
+        <h2 className="section-title about-project__title">
           О проекте
         </h2>
-        <div className="section-line"></div>
+        <div className="section-line about-project__line"></div>
         <div className="about-project__info">
           <div className="about-project__info-container">
             <h3 className="about-project__subtitle">
@@ -44,10 +44,10 @@ function AboutProject() {
               4 недели
             </p>
           </div>
-          <p className="about-project__text-under">
+          <p className="about-project__text-under-week">
             Back-end
           </p>
-          <p className="about-project__text-under">
+          <p className="about-project__text-under-week">
             Front-end
           </p>
         </div>
