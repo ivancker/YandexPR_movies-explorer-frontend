@@ -1,11 +1,15 @@
 import React from 'react';
-// import { Routes, Route } from 'react-router-dom'
+import {
+  Routes,
+  Route,
+} from 'react-router-dom';
 // import logo from '../../logo.svg';
 import './App.css';
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Footer from '../Footer/Footer';
-// import Movies from '../Movies/Movies';
+import Movies from '../Movies/Movies';
+import HeaderWhite from '../Header/Header_loggedin_white/Header_loggedin_white';
 // import SavedMovies from '../SavedMovies/SavedMovies';
 // import Profile from '../Profile/Profile';
 // import SignIn from '../Login/Login';
@@ -14,8 +18,26 @@ import Footer from '../Footer/Footer';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Landing />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Landing />
+            </>
+          }
+        />
+        <Route
+          path="/movies"
+          element={
+            <>
+              <HeaderWhite />
+              <Movies />
+            </>
+          }
+        />
+      </Routes>
       <Footer />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
