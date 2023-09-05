@@ -9,7 +9,7 @@ import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
-import HeaderWhite from '../Header/Header_loggedin_white/Header_loggedin_white';
+// import HeaderWhite from '../Header/Header_white/Header_white';
 // import SavedMovies from '../SavedMovies/SavedMovies';
 // import Profile from '../Profile/Profile';
 // import SignIn from '../Login/Login';
@@ -18,12 +18,12 @@ import HeaderWhite from '../Header/Header_loggedin_white/Header_loggedin_white';
 function App() {
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Header />
               <Landing />
             </>
           }
@@ -32,7 +32,6 @@ function App() {
           path="/movies"
           element={
             <>
-              <HeaderWhite />
               <Movies />
             </>
           }
