@@ -61,23 +61,21 @@ function Header() {
                 Сохранённые фильмы
               </Link>
             </div>
-            {/* <div className="header__profile-button-container"> */}
-              <Link
-                className="header__profile-button"
-                to="/profile"
-              >
-                <p className="header__profile-button-text">
-                  Аккаунт
-                </p>
-                <div className="header__profile-image-container">
+            <Link
+              className="header__profile-button"
+              to="/profile"
+            >
+              <p className="header__profile-button-text">
+                Аккаунт
+              </p>
+              <div className="header__profile-image-container">
                 <img
                   className="header__profile-image"
                   src={profile}
                   alt="Профиль - Кнопка - Картинка"
                 />
-                </div>
-              </Link>
-            {/* </div> */}
+              </div>
+            </Link>
           </header>
         }
       />
@@ -86,42 +84,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  /* <Route
-          path="/movies"
-          element={
-            <>
-            <div className="header__nav-movies">
-              <Link
-                className="header__movies-link"
-                to="/movies"
-              >
-                Фильмы
-              </Link>
-              <Link
-                className="header__saved-link"
-                to="/saved-movies"
-              >
-                Сохранённые фильмы
-              </Link>
-            </div>
-            <div className="header__profile-button-container">
-                <Link
-                  className="header__profile-button"
-                  to="/profile"
-                >
-                  <p className="header__profile-button-text">
-                    Аккаунт
-                  </p>
-                  <img
-                    className="header__profile-image"
-                    src={profile}
-                    alt="Профиль - Кнопка - Картинка"
-                  />
-                </Link>
-            </div>
-            </>
-          }
-        /> */
-}

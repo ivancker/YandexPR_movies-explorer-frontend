@@ -1,0 +1,14 @@
+.search-form {
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.search-form__form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form__input {
+  width: calc(100% - 104px);
+}

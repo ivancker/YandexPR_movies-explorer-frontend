@@ -1,9 +1,9 @@
+import SearchForm from './SearchForm/SearchForm';
 
 function Movies() {
-
   return (
-    <p>Movies</p>
-  );
+    <SearchForm />
+  )
 }
 
-export default Movies
+export default Movies;
