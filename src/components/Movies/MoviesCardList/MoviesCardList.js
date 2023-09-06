@@ -16,7 +16,17 @@ import image14 from '../../../images/card14.png';
 import image15 from '../../../images/card15.png';
 import image16 from '../../../images/card16.png';
 
+import {  useState } from 'react';
+
 function MoviesCardList() {
+
+  const [toggleClass, setToggleClass] = useState("movie-card__heart")
+
+  const handleLikeClick = () => {
+    setToggleClass(!toggleClass)
+  }
+
+
   return (
     <section className="movie-cards">
       <div className="movie-card">
@@ -30,9 +40,10 @@ function MoviesCardList() {
             33 слова о дизайне
           </h3>
           <img
-            className="movie-card__heart"
+            className={toggleClass ? "movie-card__heart" : "movie-card__heart_white" }
             src={heart}
             alt="33 слова о дизайне"
+            onClick={handleLikeClick}
           />
         </div>
         <div className="section-line-grey movie-card__line-grey"></div>

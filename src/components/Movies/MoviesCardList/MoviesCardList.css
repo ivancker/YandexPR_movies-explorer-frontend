@@ -44,6 +44,12 @@
   cursor: pointer;
 }
 
+.movie-card__heart_white {
+  width: 24px;
+  height: 60px;
+  cursor: pointer;
+}
+
 .movie-cards__time {
   margin: 0;
   padding-top: 6px;
