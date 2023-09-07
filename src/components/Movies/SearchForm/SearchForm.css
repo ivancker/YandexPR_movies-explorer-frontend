@@ -19,6 +19,11 @@
   border: none;
   width: 100%;
   height: 28px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0px;
+  text-align: left;
   /* width: calc(100% - 104px); */
 }
 
@@ -33,13 +38,13 @@
   line-height: 34px;
   letter-spacing: 0px;
   text-align: left;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .search-form__button {
   width: 58.65px;
   height: 34px;
-  background-color: #3456F3;
+  background-color: #3456f3;
   border: none;
   color: white;
   font-size: 11px;
@@ -48,5 +53,59 @@
   letter-spacing: 0px;
   text-align: center;
   border-radius: 16px;
-  cursor:pointer;
+  cursor: pointer;
+}
+
+.search-form__tumb-container {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.search-form__tumb_on {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 34px;
+  height: 14px;
+  background-color: #2be080;
+  border-radius: 20px;
+  padding-right: 2px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.search-form__tumb {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 34px;
+  height: 14px;
+  background-color: #EBEBEB;
+  border-radius: 20px;
+  padding-left: 2px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.search-form__tumb-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.search-form__tumb-circle_on {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.search-form__tumb-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
 }

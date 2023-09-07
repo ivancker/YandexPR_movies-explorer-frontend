@@ -24,13 +24,13 @@
 .movie-card__title-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-top: 10px;
 }
 
 .movie-card__name {
   margin: 0;
-  display: block;
+  max-width: 226px;
+  height: 32px;
   font-size: 13px;
   font-weight: 500;
   line-height: 16px;
@@ -41,12 +41,6 @@
 .movie-card__heart {
   width: 24px;
   height: 24px;
-  cursor: pointer;
-}
-
-.movie-card__heart_white {
-  width: 24px;
-  height: 60px;
   cursor: pointer;
 }
 
@@ -61,9 +55,13 @@
   color: #a0a0a0;
 }
 
-/* .movie-card__line-grey {
-  padding-top: 25px;
+/* .movie-card__space {
+  width: 16px;
 } */
+
+.movie-card__line-grey {
+  padding-top: 13px;
+}
 
 .movie-card__space {
   height: 25px;

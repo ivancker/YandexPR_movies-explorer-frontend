@@ -1,4 +1,5 @@
 import heart from '../../../images/heart.svg';
+import heartWhite from '../../../images/heart_white.svg';
 import image1 from '../../../images/card1.png';
 import image2 from '../../../images/card2.png';
 import image3 from '../../../images/card3.png';
@@ -20,10 +21,10 @@ import {  useState } from 'react';
 
 function MoviesCardList() {
 
-  const [toggleClass, setToggleClass] = useState("movie-card__heart")
+  const [toggleHeart, setToggleHeart] = useState(heartWhite)
 
-  const handleLikeClick = () => {
-    setToggleClass(!toggleClass)
+  const handleHeartClick = () => {
+    setToggleHeart(!toggleHeart)
   }
 
 
@@ -40,10 +41,10 @@ function MoviesCardList() {
             33 слова о дизайне
           </h3>
           <img
-            className={toggleClass ? "movie-card__heart" : "movie-card__heart_white" }
-            src={heart}
+            className={"movie-card__heart"}
+            src={toggleHeart ? heartWhite : heart}
             alt="33 слова о дизайне"
-            onClick={handleLikeClick}
+            onClick={handleHeartClick}
           />
         </div>
         <div className="section-line-grey movie-card__line-grey"></div>
@@ -204,7 +205,7 @@ function MoviesCardList() {
             alt="Gimme Danger: История Игги и The Stooges"
           />
         </div>
-        <span className="movie-card__space"></span>
+        {/* <span className="movie-card__space"></span> */}
         <div className="section-line-grey movie-card__line-grey"></div>
         <p className="movie-cards__time">
           1ч42м
