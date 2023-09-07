@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 function SearchForm() {
   const [toggleTumb, setToggleTumb] =
-    useState(" ");
-
-    const classTumbOn = `_on`
+    useState(false);
 
   const handleTumbClick = () => {
-    setToggleTumb(!toggleTumb);
+    setToggleTumb(toggleTumb => !toggleTumb);
   };
+
+  const toggleTumbClassCheck = toggleTumb ? '_on' : ' ';
 
   return (
     <section className="search-form">
@@ -33,8 +33,8 @@ function SearchForm() {
           className="search-form__tumb-container"
           onClick={handleTumbClick}
         >
-          <div className={`"search-form__tumb${toggleTumb}"` ? "search-form__tumb" : `"search-form__tumb${classTumbOn}"`}>
-            <div className={`"search-form__tumb-circle${toggleTumb}"` ? "search-form__tumb-circle" : `"search-form__tumb-circle${classTumbOn}"`}></div>
+          <div className={`search-form__tumb${toggleTumbClassCheck}`}>
+            <div className={`search-form__tumb-circle${toggleTumbClassCheck}`}></div>
           </div>
           <p className="search-form__tumb-title">
             Короткометражки
