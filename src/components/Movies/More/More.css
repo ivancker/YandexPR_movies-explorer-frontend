@@ -1,0 +1,22 @@
+.more {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  margin-left: 70px;
+  margin-right: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.more__button {
+  width: 320px;
+  height: 36px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: center;
+  cursor: pointer;
+}

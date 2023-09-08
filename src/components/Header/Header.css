@@ -4,9 +4,13 @@
   align-items: center;
   height: 74px;
   background-color: #073042;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .header-movies {
+  margin-left: 70px;
+  margin-right: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +21,6 @@
 .header__logo {
   width: 38px;
   height: 38px;
-  margin-left: 70px;
 }
 
 .header__nav {
@@ -39,7 +42,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 70px;
   color: black;
   font-weight: 500;
   line-height: 16px;
@@ -80,7 +82,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 70px;
   color: black;
   font-weight: 500;
   line-height: 16px;

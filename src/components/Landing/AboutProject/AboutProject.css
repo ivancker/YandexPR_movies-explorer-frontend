@@ -5,6 +5,8 @@
   flex-direction: column;
   padding-top: 110px;
   padding-bottom: 110px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .about-project__info {

@@ -3,6 +3,8 @@
   height: 574px;
   background-color: #073042;
   justify-content: space-between;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .promo__logo {

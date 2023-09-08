@@ -4,6 +4,8 @@
   align-items: center;
   flex-direction: column;
   padding-top: 70px;
+  margin-left: 70px;
+  margin-right: 70px;
   /* border: 1px solid red; */
 }
 

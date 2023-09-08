@@ -5,6 +5,8 @@
   flex-direction: column;
   padding-top: 79px;
   padding-bottom: 20px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .footer__info {

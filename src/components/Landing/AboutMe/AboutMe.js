@@ -1,5 +1,4 @@
 import photo from '../../../images/photo.png';
-import arrow from '../../../images/main_link_arrow.svg';
 
 function AboutMe() {
   return (
@@ -39,53 +38,7 @@ function AboutMe() {
             alt="Фото студента"
           />
         </div>
-        <h5 className="about-me__portfolio-header">
-          Портфолио
-        </h5>
-        <a
-          className="about-me__link"
-          href={'https://github.com/'}
-          target="_blank"
-          rel="noreferrer"
-          alt="Статичный сайт"
-        >
-          Статичный сайт
-          <img
-            className="about-me__arrow"
-            src={arrow}
-            alt="Стрелка"
-          />
-        </a>
-        <div className="section-line-grey about-me__line-grey"></div>
-        <a
-          className="about-me__link"
-          href={'https://github.com/'}
-          target="_blank"
-          rel="noreferrer"
-          alt="Адаптивный сайт"
-        >
-          Адаптивный сайт
-          <img
-            className="about-me__arrow"
-            src={arrow}
-            alt="Стрелка"
-          />
-        </a>
-        <div className="section-line-grey about-me__line-grey"></div>
-        <a
-          className="about-me__link"
-          href={'https://github.com/'}
-          target="_blank"
-          rel="noreferrer"
-          alt="Одностраничное приложение"
-        >
-          Одностраничное приложение
-          <img
-            className="about-me__arrow"
-            src={arrow}
-            alt="Стрелка"
-          />
-        </a>
+       
       </article>
     </section>
   );

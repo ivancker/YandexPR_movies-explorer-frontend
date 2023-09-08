@@ -9,7 +9,7 @@ function Footer() {
         <div className="section-line-grey"></div>
         <div className="footer__last-line">
           <p className="footer__copyright">
-            © 2023 Movies
+            © 2023
           </p>
           <p className="footer__yandex">
             Яндекс.Практикум
