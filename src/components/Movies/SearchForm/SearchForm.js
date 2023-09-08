@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function SearchForm() {
   const [toggleTumb, setToggleTumb] =
+    useState(false);
+
+  const [movie, setMovie] =
     useState(false);
 
   const handleTumbClick = () => {
@@ -10,10 +13,15 @@ function SearchForm() {
 
   const toggleTumbClassCheck = toggleTumb ? '_on' : ' ';
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    setMovie("");
+  }
+
   return (
     <section className="search-form">
       <div className="section search-form__container">
-        <form className="search-form__form">
+        <form className="search-form__form" onSubmit={handleSubmit}>
           <input
             className="search-form__input"
             name="search"

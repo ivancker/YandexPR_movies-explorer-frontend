@@ -4,8 +4,7 @@
   align-items: center;
   flex-direction: column;
   padding-top: 110px;
-  padding-bottom: 115px;
-    margin-left: 70px;
+  margin-left: 70px;
   margin-right: 70px;
 }
 
@@ -63,37 +62,3 @@
   grid-row: 1 / span 5;
   justify-self: right;
 }
-
-.about-me__portfolio-header {
-  margin: 0;
-  padding-top: 101px;
-  padding-bottom: 30px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0px;
-  text-align: left;
-  color: #a0a0a0;
-}
-
-.about-me__link {
-  text-decoration: none;
-  color: black;
-  margin: 0;
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 50px;
-  letter-spacing: -0.04em;
-  text-align: left;
-}
-
-.about-me__arrow {
-  width: 29px;
-  height: 60px;
-  padding-bottom: 9px;
-}
-
-

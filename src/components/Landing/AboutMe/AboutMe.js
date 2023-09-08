@@ -38,7 +38,6 @@ function AboutMe() {
             alt="Фото студента"
           />
         </div>
-       
       </article>
     </section>
   );
