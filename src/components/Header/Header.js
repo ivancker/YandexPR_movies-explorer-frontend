@@ -2,84 +2,127 @@
 import logo from '../../images/logo.svg';
 import profile from '../../images/profile-button.svg';
 import {
-  Routes,
-  Route,
+  useLocation,
   Link,
 } from 'react-router-dom';
 
 function Header() {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <header className="header">
+    <>
+      {location.pathname === '/' && (
+        <header className="header">
+          <Link
+            className="header__logo-link"
+            to="/"
+          >
             <img
               className="header__logo"
               src={logo}
               alt="Лого - Фильмы"
             />
-            <div className="header__nav">
-              <Link
-                className="header__signup-link"
-                to="/signup"
-              >
-                Регистрация
-              </Link>
-              <Link
-                className="header__signin-button"
-                to="/signin"
-              >
-                <p className="header__signin-button-text">
-                  Войти
-                </p>
-              </Link>
-            </div>
-          </header>
-        }
-      />
-      <Route
-        path="/movies"
-        element={
-          <header className="header-movies">
-            <img
-              className="header__logo"
-              src={logo}
-              alt="Лого - Фильмы"
-            />
-            <div className="header__nav">
-              <Link
-                className="header__movies-link"
-                to="/movies"
-              >
-                Фильмы
-              </Link>
-              <Link
-                className="header__saved-link"
-                to="/saved-movies"
-              >
-                Сохранённые фильмы
-              </Link>
-            </div>
+          </Link>
+          <div className="header__nav">
             <Link
-              className="header__profile-button"
-              to="/profile"
+              className="header__signup-link"
+              to="/signup"
             >
-              <p className="header__profile-button-text">
-                Аккаунт
-              </p>
-              <div className="header__profile-image-container">
-                <img
-                  className="header__profile-image"
-                  src={profile}
-                  alt="Профиль - Кнопка - Картинка"
-                />
-              </div>
+              Регистрация
             </Link>
-          </header>
-        }
-      />
-    </Routes>
+            <Link
+              className="header__signin-button"
+              to="/signin"
+            >
+              <p className="header__signin-button-text">
+                Войти
+              </p>
+            </Link>
+          </div>
+        </header>
+      )}
+      {(location.pathname ===
+        '/movies' ||
+        location.pathname ===
+          '/saved-movies' ||
+        location.pathname ===
+          '/profile') && (
+        <header className="header-white">
+          <Link
+            className="header__logo-link"
+            to="/"
+          >
+            <img
+              className="header__logo"
+              src={logo}
+              alt="Лого - Фильмы"
+            />
+          </Link>
+          <div className="header-white__nav">
+            <Link
+              className={
+                location.pathname ===
+                '/movies'
+                  ? 'header-white__movies-link_bold'
+                  : 'header-white__movies-link'
+              }
+              to="/movies"
+            >
+              Фильмы
+            </Link>
+            <Link
+              className={
+                location.pathname ===
+                '/saved-movies'
+                  ? 'header-white__saved-link_bold'
+                  : 'header-white__saved-link'
+              }
+              to="/saved-movies"
+            >
+              Сохранённые фильмы
+            </Link>
+          </div>
+          <Link
+            className="header-white__profile-button"
+            to="/profile"
+          >
+            <p className="header-white__profile-button-text">
+              Аккаунт
+            </p>
+            <div className="header-white__profile-image-container">
+              <img
+                className="header-white__profile-image"
+                src={profile}
+                alt="Профиль - Кнопка - Картинка"
+              />
+            </div>
+          </Link>
+        </header>
+      )}
+      {(location.pathname ===
+        '/signin' ||
+        location.pathname ===
+          '/signup') && (
+        <header className="header-register">
+          <Link
+            className="header__logo-link"
+            to="/"
+          >
+            <img
+              className="header-register__logo"
+              src={logo}
+              alt="Лого - Фильмы"
+            />
+          </Link>
+          <h1 className="header-register__title">
+            {location.pathname ===
+            '/signin'
+              ? 'Рады видеть!'
+              : 'Добро пожаловать!'}
+          </h1>
+        </header>
+      )}
+    </>
   );
 }
 

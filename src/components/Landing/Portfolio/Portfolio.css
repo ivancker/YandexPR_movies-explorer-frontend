@@ -39,3 +39,23 @@
   height: 60px;
   padding-bottom: 9px;
 }
+
+@media screen and (max-width: 768px) {
+  .portfolio {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 90px;
+  }
+
+  .portfolio__header {
+    padding-top: 90px;
+  }
+
+  .portfolio__link {
+    font-size: 28px;
+  }
+
+  .portfolio__arrow {
+    width: 27px;
+  }
+}

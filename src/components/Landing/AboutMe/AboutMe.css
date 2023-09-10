@@ -62,3 +62,39 @@
   grid-row: 1 / span 5;
   justify-self: right;
 }
+
+@media screen and (max-width: 768px) {
+  .about-me {
+    padding-top: 90px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .about-me__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .about-me__subtitle {
+    padding-top: 16px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__text {
+    max-width: 364px;
+    padding-top: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  .about-me__photo {
+    max-width: 255px;
+    max-height: 307px;
+  }
+
+  .about-me__github {
+    padding-top: 87px;
+  }
+}

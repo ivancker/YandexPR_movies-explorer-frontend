@@ -1,0 +1,12 @@
+.saved-movies {
+  padding-top: 70px;
+  margin-left: 70px;
+  margin-right: 70px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    270px
+  );
+  gap: 38px 20px;
+  justify-content: left;
+}

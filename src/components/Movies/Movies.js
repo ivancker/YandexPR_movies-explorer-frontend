@@ -1,15 +1,15 @@
 import SearchForm from './SearchForm/SearchForm';
 import MoviesCardList from './MoviesCardList/MoviesCardList';
-import More from './More/More'
+import Preloader from './Preloader/Preloader';
 
 function Movies() {
   return (
     <>
-    <SearchForm />
-    <MoviesCardList />
-    <More />
+      <SearchForm />
+      <MoviesCardList />
+      <Preloader />
     </>
-  )
+  );
 }
 
 export default Movies;

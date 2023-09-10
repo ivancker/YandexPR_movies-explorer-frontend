@@ -6,11 +6,9 @@
   padding-top: 70px;
   margin-left: 70px;
   margin-right: 70px;
-  /* border: 1px solid red; */
 }
 
 .search-form__form {
-  /* border: 1px solid green; */
   display: flex;
   align-items: center;
   justify-items: center;
@@ -26,12 +24,10 @@
   line-height: 34px;
   letter-spacing: 0px;
   text-align: left;
-  /* width: calc(100% - 104px); */
 }
 
 .search-form__input:focus {
   outline: none;
-  /* width: calc(100% - 104px); */
 }
 
 .search-form__input::placeholder {

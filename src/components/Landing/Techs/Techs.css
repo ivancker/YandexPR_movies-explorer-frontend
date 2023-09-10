@@ -31,7 +31,6 @@
 
 .techs__list {
   margin: 0;
-  max-width: 1140px;
   padding-top: 100px;
   display: flex;
   justify-content: center;
@@ -56,4 +55,29 @@
 
 .techs__list li:last-child {
   margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .techs {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 90px;
+    padding-top: 90px;
+  }
+
+  .techs__text {
+    padding-top: 22px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    max-width: 460px;
+  }
+
+  .techs__list {
+    padding-top: 83px;
+  }
+
+  .techs__list-text {
+    font-size: 12px;
+  }
 }
