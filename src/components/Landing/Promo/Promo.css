@@ -60,11 +60,10 @@
 
 @media screen and (max-width: 768px) {
   .promo {
-    display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .promo__logo {
@@ -123,4 +122,38 @@
     border: 1px solid
       rgba(255, 255, 255, 0.6);
   }
+}
+
+@media screen and (max-width: 320px) {
+  .promo {
+    padding-bottom: 30px;
+  }
+
+  .promo__logo {
+    padding: 0;
+    margin-top: 70px;
+    max-width: 210px;
+    max-height: 206px;
+  }
+
+  .promo__info-title {
+    padding-top: 44px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .promo__info-description {
+    padding-top: 24px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .promo__info-button {
+    margin-left: 0px;
+    margin-top: 90px;
+    margin-right: 0px;
+  }
+
 }

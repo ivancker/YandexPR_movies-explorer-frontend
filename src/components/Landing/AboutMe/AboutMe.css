@@ -56,6 +56,7 @@
 .about-me__photo {
   margin: 0;
   padding-top: 66px;
+  width: 100%;
   max-width: 270px;
   max-height: 327px;
   grid-column: 2;
@@ -96,5 +97,26 @@
 
   .about-me__github {
     padding-top: 87px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-me {
+    padding-top: 70px;
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .about-me__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .about-me__line {
+    margin-top: 28px;
+  }
+  .about-me__info {
+    display: flex;
+    flex-direction: column;
   }
 }
