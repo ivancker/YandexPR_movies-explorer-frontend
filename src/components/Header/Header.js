@@ -97,6 +97,7 @@ function Header() {
               />
             </div>
           </Link>
+          <button className="header-white__nav-mob" />
         </header>
       )}
       {(location.pathname ===

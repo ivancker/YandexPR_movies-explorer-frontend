@@ -56,3 +56,41 @@
     margin-right: 30px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .footer {
+    padding-top: 79px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .footer__about {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .footer__last-line {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .footer__yandex {
+    padding-right: 0px;
+  }
+
+  .footer__github {
+    margin: 0;
+    padding-top: 12px;
+  }
+
+  .footer__copyright {
+    margin: 0;
+    padding-top: 30px;
+    color: #A0A0A0;
+    grid-row: 3;
+  }
+}

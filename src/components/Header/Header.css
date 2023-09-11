@@ -172,7 +172,26 @@
   padding-bottom: 40px;
 }
 
+.header-white__nav-mob {
+  display: none;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
+
+  .header-white__nav-mob {
+    display: block;
+    background: url('../../images/nav-black.svg');
+    width: 44px;
+    height: 44px;
+    border: none;
+    padding: 0;
+  }
+
+  .header-white__profile-button {
+    display: none;
+  }
+
   .header {
     padding-left: 30px;
     padding-right: 30px;
@@ -184,6 +203,11 @@
 }
 
 @media screen and (max-width: 320px) {
+  .header-white__nav-mob {
+    width: 40px;
+    height: 43px;
+  }
+
   .header {
     padding-left: 14px;
     padding-right: 14px;

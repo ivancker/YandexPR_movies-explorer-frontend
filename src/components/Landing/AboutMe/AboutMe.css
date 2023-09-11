@@ -115,8 +115,34 @@
   .about-me__line {
     margin-top: 28px;
   }
-  .about-me__info {
-    display: flex;
-    flex-direction: column;
+  
+  .about-me__photo {
+    padding-top: 60px;
+    max-width: 292px;
+    max-height: 352px;
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  .about-me__name {
+    padding-top: 40px;
+    font-size: 30px;
+    line-height: 36.31px;
+  }
+
+  .about-me__subtitle {
+    padding-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  
+  .about-me__text {
+    padding-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-me__github {
+    padding-top: 40px;
   }
 }
