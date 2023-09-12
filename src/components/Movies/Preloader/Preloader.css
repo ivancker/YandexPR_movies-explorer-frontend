@@ -1,4 +1,4 @@
-.more {
+.preloader {
   padding-top: 50px;
   padding-bottom: 80px;
   margin-left: 70px;
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.more__button {
+.preloader__button {
   width: 320px;
   height: 36px;
   background-color: #F9F9F9;
@@ -15,8 +15,15 @@
   border: none;
   font-size: 12px;
   font-weight: 500;
-  line-height: 15px;
+  line-height: 14.52px;
   letter-spacing: 0px;
   text-align: center;
   cursor: pointer;
+}
+
+@media screen and (max-height: 768px) {
+  .preloader {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }

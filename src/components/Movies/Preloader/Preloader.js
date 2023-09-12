@@ -1,11 +1,11 @@
-function More() {
+function Preloader() {
   return (
-    <section className="more">
-      <button className="more__button">
+    <section className="preloader">
+      <button className="preloader__button">
         Ещё
       </button>
     </section>
   );
 }
 
-export default More;
+export default Preloader;

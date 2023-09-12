@@ -200,6 +200,22 @@
     margin-left: 30px;
     margin-right: 30px;
   }
+
+  .header-white__movies-link {
+    display: none;
+  }
+  
+  .header-white__movies-link_bold {
+    display: none;
+  }
+  
+  .header-white__saved-link {
+    display: none;
+  }
+  
+  .header-white__saved-link_bold {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -211,6 +227,11 @@
   .header {
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  .header-white {
+    margin-left: 14px;
+    margin-right: 14px;
   }
 
   .header__signup-link {

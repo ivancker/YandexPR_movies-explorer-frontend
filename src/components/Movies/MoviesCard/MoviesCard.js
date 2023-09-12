@@ -18,7 +18,7 @@ function MoviesCard({
   return (
     <div className="movie-card">
       <img
-        className="movie-cards__image"
+        className="movie-card__image"
         src={movieImage}
         alt="Фильм"
       />
@@ -40,7 +40,7 @@ function MoviesCard({
         />
       </div>
       <div className="section-line-grey movie-card__line-grey"></div>
-      <p className="movie-cards__time">
+      <p className="movie-card__time">
         {movieDuration}
       </p>
     </div>
