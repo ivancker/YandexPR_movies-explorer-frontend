@@ -8,6 +8,7 @@
 }
 
 .preloader__button {
+  padding: 0;
   width: 320px;
   height: 36px;
   background-color: #F9F9F9;
@@ -21,9 +22,17 @@
   cursor: pointer;
 }
 
-@media screen and (max-height: 768px) {
+@media screen and (max-width: 768px) {
   .preloader {
     margin-left: 30px;
     margin-right: 30px;
   }
+}
+
+@media screen and (max-width: 320px) {
+  .preloader {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
 }

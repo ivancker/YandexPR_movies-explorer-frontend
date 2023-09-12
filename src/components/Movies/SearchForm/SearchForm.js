@@ -21,7 +21,7 @@ function SearchForm() {
             placeholder="Фильм"
           ></input>
           <button
-            className="search-form__button"
+            className="link-button search-form__button"
             aria-label="Найти"
             type="submit"
           >

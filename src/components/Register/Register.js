@@ -28,12 +28,12 @@ function Register() {
           name="password"
           type="password"
         ></input>
-        <button className="register-form__button">Зарегистрироваться</button>
+        <button className="link-button register-form__button">Зарегистрироваться</button>
       </form>
       <div className="register__under-button">
       <p className="register__under-button-text">Уже зарегистрированы?</p>
       <Link
-      className="register__link"
+      className="link register__link"
       to="/signin"
       >Войти</Link>
       </div>

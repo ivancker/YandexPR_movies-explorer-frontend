@@ -1,7 +1,7 @@
 function Preloader() {
   return (
     <section className="preloader">
-      <button className="preloader__button">
+      <button className="link-button preloader__button">
         Ещё
       </button>
     </section>

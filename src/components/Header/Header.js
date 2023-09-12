@@ -25,13 +25,13 @@ function Header() {
           </Link>
           <div className="header__nav">
             <Link
-              className="header__signup-link"
+              className="link header__signup-link"
               to="/signup"
             >
               Регистрация
             </Link>
             <Link
-              className="header__signin-button"
+              className="link header__signin-button"
               to="/signin"
             >
               <p className="header__signin-button-text">
@@ -63,8 +63,8 @@ function Header() {
               className={
                 location.pathname ===
                 '/movies'
-                  ? 'header-white__movies-link_bold'
-                  : 'header-white__movies-link'
+                  ? 'link header-white__movies-link_bold'
+                  : 'link header-white__movies-link'
               }
               to="/movies"
             >
@@ -74,8 +74,8 @@ function Header() {
               className={
                 location.pathname ===
                 '/saved-movies'
-                  ? 'header-white__saved-link_bold'
-                  : 'header-white__saved-link'
+                  ? 'link header-white__saved-link_bold'
+                  : 'link header-white__saved-link'
               }
               to="/saved-movies"
             >

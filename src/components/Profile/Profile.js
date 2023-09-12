@@ -44,8 +44,8 @@ function Profile() {
         </ul>
         {/* <button className="profile__edit-button">Редактировать</button> */}
       </form>
-      <p className="profile__edit-text">Редактировать</p>
-      <Link className="profile__link-exit" to="/">
+      <p className="link profile__edit-text">Редактировать</p>
+      <Link className="link profile__link-exit" to="/">
       Выйти из аккаунта
       </Link>
     </div>

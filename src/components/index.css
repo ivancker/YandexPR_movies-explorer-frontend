@@ -38,3 +38,10 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+.link:hover {
+  opacity: 70%;
+}
+
+.link-button:hover {
+  opacity: 80%;
+}

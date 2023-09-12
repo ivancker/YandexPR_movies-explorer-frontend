@@ -8,7 +8,7 @@ function Portfolio() {
           Портфолио
         </h5>
         <a
-          className="portfolio__link"
+          className="link portfolio__link"
           href={'https://github.com/'}
           target="_blank"
           rel="noreferrer"
@@ -23,7 +23,7 @@ function Portfolio() {
         </a>
         <div className="section-line-grey portfolio__line-grey"></div>
         <a
-          className="portfolio__link"
+          className="link portfolio__link"
           href={'https://github.com/'}
           target="_blank"
           rel="noreferrer"
@@ -38,7 +38,7 @@ function Portfolio() {
         </a>
         <div className="section-line-grey portfolio__line-grey"></div>
         <a
-          className="portfolio__link"
+          className="link portfolio__link"
           href={'https://github.com/'}
           target="_blank"
           rel="noreferrer"

@@ -27,12 +27,11 @@
 
 @media screen and (max-width: 320px) {
   .movies-cards {
+    padding-top: 40px;
+    padding-bottom: 10px;
     margin-left: 14px;
     margin-right: 14px;
-    grid-template-columns: repeat(
-      auto-fit,
-      300px
-    );
-    gap: 30px 30px;
+    grid-template-columns: 300px;
+    gap: 34px;
   }
 }

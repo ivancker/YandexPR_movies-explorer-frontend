@@ -15,7 +15,7 @@ function Promo() {
           создателя.
         </h3>
         <Link
-          className="promo__info-button"
+          className="link promo__info-button"
           to="#about-project"
         >
           <p className="promo__info-button-text">

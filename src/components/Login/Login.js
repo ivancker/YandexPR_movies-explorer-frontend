@@ -20,12 +20,12 @@ function Login() {
           name="password"
           type="password"
         ></input>
-        <button className="login-form__button">Войти</button>
+        <button className="link-button login-form__button">Войти</button>
       </form>
       <div className="login__under-button">
       <p className="login__under-button-text">Ещё не зарегистрированы?</p>
       <Link
-      className="login__link"
+      className="link login__link"
       to="/signup"
       >Регистрация</Link>
       </div>
