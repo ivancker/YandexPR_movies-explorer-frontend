@@ -28,6 +28,7 @@ function Register() {
           name="password"
           type="password"
         ></input>
+        <span className="login-form__error-space"><p className="login-form__error-text">Что-то пошло не так...</p></span>
         <button className="link-button register-form__button">Зарегистрироваться</button>
       </form>
       <div className="register__under-button">

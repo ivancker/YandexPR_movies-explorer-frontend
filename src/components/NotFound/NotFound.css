@@ -36,3 +36,39 @@
   color: #3456F3;
   background-color: transparent;
 }
+
+@media screen and (max-width: 768px) {
+
+  .not-found {
+    margin-top: 408px;
+  }
+
+  .not-found__page-back {
+    margin-bottom: 222px;
+  }
+  
+}
+
+@media screen and (max-width: 320px) {
+  .not-found {
+    margin-top: 328px;
+  }
+
+  .not-found__title-number {
+    font-size: 80px;
+    line-height: 100px;
+  }
+
+  .not-found__title {
+    margin-top: 10px;
+    margin-bottom: 284px;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .not-found__page-back {
+    margin-bottom: 30px;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}

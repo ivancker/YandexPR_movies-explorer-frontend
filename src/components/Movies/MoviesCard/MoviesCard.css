@@ -64,3 +64,16 @@
   }
 
 }
+
+@media screen and (max-width: 320) {
+  .movie-card__name {
+    max-width: 240px;
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .movie-card__time {
+    font-size: 10px;
+    line-height: 12.1px;
+  }
+}
