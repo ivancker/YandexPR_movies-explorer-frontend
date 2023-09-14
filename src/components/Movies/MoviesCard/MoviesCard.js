@@ -14,7 +14,7 @@ function MoviesCard({
   const [toggleHeart, setToggleHeart] =
     useState(heartWhite);
 
-  const handleHeartClick = () => {
+  const handleHeartClick = () => { 
     setToggleHeart(!toggleHeart);
   };
 
