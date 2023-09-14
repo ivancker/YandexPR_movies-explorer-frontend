@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Profile() {
   let userName = `Виталий`;
@@ -42,11 +42,15 @@ function Profile() {
             />
           </li>
         </ul>
-        {/* <button className="profile__edit-button">Редактировать</button> */}
       </form>
-      <button className="link profile__edit-btn">Редактировать</button>
-      <Link className="link profile__exit-link" to="/">
-      Выйти из аккаунта
+      <button className="link profile__edit-btn">
+        Редактировать
+      </button>
+      <Link
+        className="link profile__exit-link"
+        to="/"
+      >
+        Выйти из аккаунта
       </Link>
     </div>
   );

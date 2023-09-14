@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Register() {
   return (
@@ -28,15 +28,25 @@ function Register() {
           name="password"
           type="password"
         ></input>
-        <span className="login-form__error-space"><p className="login-form__error-text">Что-то пошло не так...</p></span>
-        <button className="link-button register-form__button">Зарегистрироваться</button>
+        <span className="login-form__error-space">
+          <p className="login-form__error-text">
+            Что-то пошло не так...
+          </p>
+        </span>
+        <button className="link-button register-form__button">
+          Зарегистрироваться
+        </button>
       </form>
       <div className="register__under-button">
-      <p className="register__under-button-text">Уже зарегистрированы?</p>
-      <Link
-      className="link register__link"
-      to="/signin"
-      >Войти</Link>
+        <p className="register__under-button-text">
+          Уже зарегистрированы?
+        </p>
+        <Link
+          className="link register__link"
+          to="/signin"
+        >
+          Войти
+        </Link>
       </div>
     </div>
   );

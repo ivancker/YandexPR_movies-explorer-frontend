@@ -1,4 +1,3 @@
-// import Navigation from "./Navigation/Navigation";
 import logo from '../../images/logo.svg';
 import profile from '../../images/profile-button.svg';
 import {
@@ -6,7 +5,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-function Header() {
+function Header({ onClick }) {
   const location = useLocation();
 
   return (
@@ -14,7 +13,7 @@ function Header() {
       {location.pathname === '/' && (
         <header className="header">
           <Link
-            className="header__logo-link"
+            className="link-button header__logo-link"
             to="/"
           >
             <img
@@ -39,6 +38,10 @@ function Header() {
               </p>
             </Link>
           </div>
+          <button
+            className="link-button header__nav-mob"
+            onClick={onClick}
+          />
         </header>
       )}
       {(location.pathname ===
@@ -49,7 +52,7 @@ function Header() {
           '/profile') && (
         <header className="header-white">
           <Link
-            className="header__logo-link"
+            className="link-button header__logo-link"
             to="/"
           >
             <img
@@ -83,7 +86,7 @@ function Header() {
             </Link>
           </div>
           <Link
-            className="header-white__profile-button"
+            className="link-button header-white__profile-button"
             to="/profile"
           >
             <p className="header-white__profile-button-text">
@@ -97,7 +100,10 @@ function Header() {
               />
             </div>
           </Link>
-          <button className="header-white__nav-mob" />
+          <button
+            className="link-button header-white__nav-mob"
+            onClick={onClick}
+          />
         </header>
       )}
       {(location.pathname ===

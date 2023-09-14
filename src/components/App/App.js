@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-// import logo from '../../logo.svg';
 import './App.css';
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
@@ -14,16 +13,21 @@ import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import NotFound from '../NotFound/NotFound';
-// import HeaderWhite from '../Header/Header_white/Header_white';
-// import SavedMovies from '../SavedMovies/SavedMovies';
-// import Profile from '../Profile/Profile';
-// import SignIn from '../Login/Login';
-// import SignUp from '../Register/Register';
+import NavMenu from '../NavMenu/NavMenu';
 
 function App() {
+  const [
+    isNavMenuOpen,
+    setIsNavMenuOpen,
+  ] = React.useState(null);
+
+  const closeNavMenu = () =>
+    setIsNavMenuOpen(null);
   return (
     <div className="App">
-      <Header />
+      <Header
+        onClick={setIsNavMenuOpen}
+      />
       <Routes>
         <Route
           path="/"
@@ -69,6 +73,10 @@ function App() {
           element={<NotFound />}
         />
       </Routes>
+      <NavMenu
+        isOpen={isNavMenuOpen}
+        onClose={closeNavMenu}
+      />
     </div>
   );
 }

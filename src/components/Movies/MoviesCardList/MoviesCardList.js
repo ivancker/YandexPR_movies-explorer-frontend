@@ -15,8 +15,6 @@ import image14 from '../../../images/card14.png';
 import image15 from '../../../images/card15.png';
 import image16 from '../../../images/card16.png';
 
-// ({ movieImage, movieName, movieDuration })
-
 import MoviesCard from '../MoviesCard/MoviesCard';
 
 function MoviesCardList() {

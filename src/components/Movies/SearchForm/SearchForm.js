@@ -5,10 +5,13 @@ function SearchForm() {
     useState(false);
 
   const handleTumbClick = () => {
-    setToggleTumb(toggleTumb => !toggleTumb);
+    setToggleTumb(
+      (toggleTumb) => !toggleTumb
+    );
   };
 
-  const toggleTumbClassCheck = toggleTumb ? '_on' : ' ';
+  const toggleTumbClassCheck =
+    toggleTumb ? '_on' : ' ';
 
   return (
     <section className="search-form">
@@ -33,8 +36,12 @@ function SearchForm() {
           className="search-form__tumb-container"
           onClick={handleTumbClick}
         >
-          <div className={`search-form__tumb${toggleTumbClassCheck}`}>
-            <div className={`search-form__tumb-circle${toggleTumbClassCheck}`}></div>
+          <div
+            className={`link-button search-form__tumb${toggleTumbClassCheck}`}
+          >
+            <div
+              className={`search-form__tumb-circle${toggleTumbClassCheck}`}
+            ></div>
           </div>
           <p className="search-form__tumb-title">
             Короткометражки

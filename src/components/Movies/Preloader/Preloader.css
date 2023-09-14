@@ -11,7 +11,7 @@
   padding: 0;
   width: 320px;
   height: 36px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border-radius: 6px;
   border: none;
   font-size: 12px;
@@ -34,5 +34,4 @@
     margin-left: 40px;
     margin-right: 40px;
   }
-
 }

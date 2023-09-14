@@ -1,6 +1,5 @@
 .not-found {
   margin-top: 246px;
-
 }
 
 .not-found__title-number {
@@ -33,12 +32,11 @@
   text-align: center;
   cursor: pointer;
   border: none;
-  color: #3456F3;
+  color: #3456f3;
   background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
-
   .not-found {
     margin-top: 408px;
   }
@@ -46,7 +44,6 @@
   .not-found__page-back {
     margin-bottom: 222px;
   }
-  
 }
 
 @media screen and (max-width: 320px) {

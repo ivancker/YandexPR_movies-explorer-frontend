@@ -13,7 +13,7 @@
   line-height: 12px;
   letter-spacing: 0em;
   text-align: left;
-  color: #A0A0A0;
+  color: #a0a0a0;
   padding-top: 24px;
 }
 
@@ -25,7 +25,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
   width: 100%;
   font-size: 14px;
   font-weight: 400;
@@ -44,12 +44,12 @@
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0em;
-  color: #E8E8E8;
+  color: #e8e8e8;
 }
 
 .login-form__button {
   width: 100%;
-  background-color: #3456F3;
+  background-color: #3456f3;
   margin-top: 165px;
   font-size: 14px;
   font-weight: 500;
@@ -76,7 +76,7 @@
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0em;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .login__link {
@@ -85,7 +85,7 @@
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0em;
-  color: #3456F3;
+  color: #3456f3;
   text-decoration: none;
 }
 
@@ -97,7 +97,6 @@
   .login__under-button {
     padding-bottom: 232px;
   }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -120,7 +119,7 @@
     font-size: 12px;
     line-height: 14.52px;
   }
-  
+
   .login__link {
     font-size: 12px;
     line-height: 14.52px;
@@ -129,5 +128,4 @@
   .login__under-button {
     padding-bottom: 30px;
   }
-
 }
