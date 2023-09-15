@@ -38,10 +38,6 @@ function Header({ onClick }) {
               </p>
             </Link>
           </div>
-          <button
-            className="link-button header__nav-mob"
-            onClick={onClick}
-          />
         </header>
       )}
       {(location.pathname ===

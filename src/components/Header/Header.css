@@ -192,10 +192,6 @@
     padding: 0;
   }
 
-  .header__nav {
-    display: none;
-  }
-
   .header-white__nav-mob {
     display: block;
     background: url('../../images/nav-black.svg');

@@ -7,9 +7,9 @@ import image3 from '../../images/card3.png';
 
 function SavedMovies() {
   return (
-    <>
+    <main className='saved-movies'>
       <SearchForm />
-      <section className="saved-movies">
+      <section className="saved-movies-container">
         <MoviesCard
           movieName="33 слова о дизайне"
           movieImage={image1}
@@ -27,7 +27,7 @@ function SavedMovies() {
           movieDuration="1ч42м"
         />
       </section>
-    </>
+    </main>
   );
 }
 

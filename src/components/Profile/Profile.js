@@ -26,7 +26,7 @@ function Profile() {
   };
 
   return (
-    <div className="profile">
+    <main className="profile">
       <h2 className="profile__title">
         Привет, {userName}!
       </h2>
@@ -76,7 +76,7 @@ function Profile() {
       <Link className={exitLink} to="/">
         Выйти из аккаунта
       </Link>
-    </div>
+    </main>
   );
 }
 

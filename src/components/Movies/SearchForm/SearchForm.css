@@ -28,6 +28,8 @@
 
 .search-form__input:focus {
   outline: none;
+  background-color: #F9F9F9;
+  border-radius: 10px;
 }
 
 .search-form__input::placeholder {

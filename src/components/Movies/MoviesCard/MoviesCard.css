@@ -29,6 +29,18 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
+  border: none;
+  background: url(../../../images/heart_white.svg) no-repeat;
+  background-color: transparent;
+}
+
+.movie-card__heart_red {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+  background: url(../../../images/heart.svg) no-repeat;
+  background-color: transparent;
 }
 
 .movie-card__time {
@@ -51,7 +63,12 @@
 }
 
 .movie-card__delete-fav {
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  border: none;
+  background: url(../../../images/delete.svg) no-repeat;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {

@@ -100,6 +100,16 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .about-me__photo {
+    padding-top: 60px;
+    max-width: 292px;
+    max-height: 352px;
+    grid-column: 1;
+    justify-self: center;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .about-me {
     padding-top: 70px;
@@ -114,14 +124,6 @@
 
   .about-me__line {
     margin-top: 28px;
-  }
-
-  .about-me__photo {
-    padding-top: 60px;
-    max-width: 292px;
-    max-height: 352px;
-    grid-column: 1;
-    justify-self: center;
   }
 
   .about-me__name {

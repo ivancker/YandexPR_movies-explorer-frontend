@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
   return (
-    <div className="register">
+    <main className="register">
       <form className="register-form">
         <p className="register-form__input-title">
           Имя
@@ -48,7 +48,7 @@ function Register() {
           Войти
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -2,19 +2,17 @@ import { useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
-import heart from '../../../images/heart.svg';
-import heartWhite from '../../../images/heart_white.svg';
-import deleteFav from '../../../images/delete.svg';
-
 function MoviesCard({
   movieImage,
   movieName,
   movieDuration,
 }) {
   const [toggleHeart, setToggleHeart] =
-    useState(heartWhite);
+    useState(
+      'link-button movie-card__heart'
+    );
 
-  const handleHeartClick = () => { 
+  const handleHeartClick = () => {
     setToggleHeart(!toggleHeart);
   };
 
@@ -33,28 +31,21 @@ function MoviesCard({
         </h3>
         {location.pathname ===
           '/movies' && (
-          <img
+          <button
             className={
-              'link-button movie-card__heart'
-            }
-            src={
               toggleHeart
-                ? heartWhite
-                : heart
+                ? 'link-button movie-card__heart'
+                : 'link-button movie-card__heart_red'
             }
-            alt={movieName}
             onClick={handleHeartClick}
           />
         )}
         {location.pathname ===
           '/saved-movies' && (
-          <img
+          <button
             className={
               'link-button movie-card__delete-fav'
             }
-            src={deleteFav}
-            alt={movieName}
-            onClick={handleHeartClick}
           />
         )}
       </div>
