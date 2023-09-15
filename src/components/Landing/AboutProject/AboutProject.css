@@ -13,6 +13,7 @@
   padding-top: 70px;
   display: flex;
   margin: auto;
+  gap: 40px;
   text-align: left;
 }
 
@@ -95,6 +96,10 @@
   .about-project__text-under-week {
     font-weight: 400;
   }
+
+  .about-project__info {
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -114,6 +119,7 @@
   }
 
   .about-project__info {
+    gap: 0px;
     padding-top: 4px;
     flex-direction: column;
   }
