@@ -1,8 +1,29 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Profile() {
   let userName = `Виталий`;
   let userEmail = `pochta@yandex.ru`;
+
+  const [editButton, setEditButton] =
+    useState('link profile__edit-btn');
+  const [
+    editButtonText,
+    setEditButtonText,
+  ] = useState('Редактировать');
+  const [exitLink, setExitLink] =
+    useState('profile__exit-link');
+
+  const handleEditButtonClick = (e) => {
+    e.preventDefault();
+    setEditButton(
+      'link-button profile__edit-btn_save'
+    );
+    setEditButtonText('Сохранить');
+    setExitLink(
+      'profile__exit-link_off'
+    );
+  };
 
   return (
     <div className="profile">
@@ -42,14 +63,17 @@ function Profile() {
             />
           </li>
         </ul>
+        <p className="profile__edit-error">При обновлении профиля произошла ошибка.</p>
+        <button
+          className={editButton}
+          onClick={
+            handleEditButtonClick
+          }
+        >
+          {editButtonText}
+        </button>
       </form>
-      <button className="link profile__edit-btn">
-        Редактировать
-      </button>
-      <Link
-        className="link profile__exit-link"
-        to="/"
-      >
+      <Link className={exitLink} to="/">
         Выйти из аккаунта
       </Link>
     </div>
