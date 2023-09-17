@@ -1,9 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import {
   Routes,
   Route,
 } from 'react-router-dom';
-import './App.css';
+
+
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Footer from '../Footer/Footer';
@@ -15,14 +16,23 @@ import Register from '../Register/Register';
 import NotFound from '../NotFound/NotFound';
 import NavMenu from '../NavMenu/NavMenu';
 
+import { register } from '../../utils/Api';
+
 function App() {
   const [
     isNavMenuOpen,
     setIsNavMenuOpen,
-  ] = React.useState(null);
+  ] = useState(null);
 
   const closeNavMenu = () =>
     setIsNavMenuOpen(null);
+
+  function handleRegister ({email, name, password}) {
+    register(email, password, name)
+    
+
+  }
+
   return (
     <div className="App">
       <Header

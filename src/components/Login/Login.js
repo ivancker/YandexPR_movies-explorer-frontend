@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Login({ handleRegistre }) {
+  const { inputData } = validation()
+
+  function handleSubmit(evn) {
+    evn.preventDefault();
+    handleRegistre(inputData);
+  }
+
+
   return (
-    <main className="login">
+    <main className="login" onSubmit={handleSubmit}>
       <form className="login-form">
         <p className="login-form__input-title">
           E-mail
@@ -11,6 +19,7 @@ function Login() {
           className="login-form__input"
           name="email"
           type="email"
+          value={inputData.name}
         ></input>
         <p className="login-form__input-title">
           Пароль

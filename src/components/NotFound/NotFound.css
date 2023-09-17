@@ -1,5 +1,8 @@
 .not-found {
   margin-top: 246px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .not-found__title-number {
