@@ -16,8 +16,6 @@ import Register from '../Register/Register';
 import NotFound from '../NotFound/NotFound';
 import NavMenu from '../NavMenu/NavMenu';
 
-import { register } from '../../utils/Api';
-
 function App() {
   const [
     isNavMenuOpen,
@@ -26,12 +24,6 @@ function App() {
 
   const closeNavMenu = () =>
     setIsNavMenuOpen(null);
-
-  function handleRegister ({email, name, password}) {
-    register(email, password, name)
-    
-
-  }
 
   return (
     <div className="App">
