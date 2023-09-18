@@ -11,6 +11,7 @@ function Register() {
           className="register-form__input"
           name="name"
           type="text"
+          required
         ></input>
         <p className="register-form__input-title">
           E-mail
@@ -19,6 +20,7 @@ function Register() {
           className="register-form__input"
           name="email"
           type="email"
+          required
         ></input>
         <p className="register-form__input-title">
           Пароль
@@ -27,6 +29,7 @@ function Register() {
           className="register-form__input"
           name="password"
           type="password"
+          required
         ></input>
         <span className="login-form__error-space">
           <p className="login-form__error-text">
