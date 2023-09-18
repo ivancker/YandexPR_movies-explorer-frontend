@@ -24,6 +24,7 @@ function App() {
   const closeNavMenu = () =>
     setIsNavMenuOpen(null);
 
+    
   return (
     <div className="App">
       <Header
