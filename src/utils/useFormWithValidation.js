@@ -48,8 +48,8 @@ export default function useFormWithValidation() {
   return {
     values,
     handleChange,
-    errors,
     isValid,
+    errors,
     resetForm,
   };
 }
