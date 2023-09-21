@@ -1,10 +1,10 @@
 function Preloader() {
   return (
-    <section className="preloader">
-      <button className="link-button preloader__button">
-        Ещё
-      </button>
-    </section>
+    <div className="preloader">
+      <div className="preloader__container">
+        <span className="preloader__round"></span>
+      </div>
+    </div>
   );
 }
 
