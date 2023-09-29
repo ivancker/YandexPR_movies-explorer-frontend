@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import useFormWithValidation from '../../utils/useFormWithValidation';
+import React from 'react';
+import Form from '../Form/Form';
+
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
 
 function Register({ onRegister }) {
   const {
@@ -8,97 +9,114 @@ function Register({ onRegister }) {
     handleChange,
     errors,
     isValid,
-    resetForm,
+    formRef,
   } = useFormWithValidation();
 
-  useEffect(() => {
-    resetForm();
-  }, [resetForm]);
-
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister({
-      name: values.name,
-      email: values.email,
-      password: values.password,
-    });
-    resetForm();
-  }
+
+    onRegister(values);
+  };
 
   return (
-    <main className="register">
-      <form
-        className="register-form"
-        noValidate
+    <section className="register">
+      <Form
+        formRef={formRef}
         onSubmit={handleSubmit}
+        isValid={isValid}
+        title="Добро пожаловать!"
+        buttonName="Зарегистрироваться"
+        redirectText="Уже зарегистрированы?"
+        redirectLink="Войти"
+        redirectPath="/signin"
       >
-        <p className="register-form__input-title">
+        <label
+          className="form__label"
+          htmlFor="name"
+        >
           Имя
-        </p>
+        </label>
         <input
-          className="register-form__input"
+          className={`form__input ${
+            errors.name &&
+            'form__input_type_error'
+          }`}
           name="name"
           type="text"
-          required
-          minLength="2"
-          maxLength="30"
-          value={values.name || ''}
+          placeholder="Введите имя"
+          id="name"
+          value={values.name}
           onChange={handleChange}
-          pattern="^[A-Za-zА-Яа-яЁё /s -]+$"
-        ></input>
-        <span className="register-form__error-text">
-          {errors.name || ''}
+          required
+          minLength={2}
+          maxLength={30}
+        />
+        <span
+          className={`form__error-span ${
+            errors.name &&
+            'form__error-span_visible'
+          }`}
+        >
+          {errors.name}
         </span>
-        <p className="register-form__input-title">
+        <label
+          className="form__label"
+          htmlFor="email"
+        >
           E-mail
-        </p>
+        </label>
         <input
-          className="register-form__input"
+          className={`form__input ${
+            errors.email &&
+            'form__input_type_error'
+          }`}
           name="email"
           type="email"
-          required
+          placeholder="Введите E-mail"
+          id="email"
+          value={values.email}
           onChange={handleChange}
-          value={values.email || ''}
-          pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
-        ></input>
-        <span className="register-form__error-text">
-          {errors.email || ''}
+          required
+        />
+        <span
+          className={`form__error-span ${
+            errors.email &&
+            'form__error-span_visible'
+          }`}
+        >
+          {errors.email}
         </span>
-        <p className="register-form__input-title">
+        <label
+          className="form__label"
+          htmlFor="password"
+        >
           Пароль
-        </p>
+        </label>
         <input
-          className="register-form__input"
+          className={`form__input ${
+            errors.password &&
+            'form__input_type_error'
+          }`}
           name="password"
           type="password"
-          required
-          minLength="8"
-          value={values.password || ''}
+          placeholder="Введите пароль"
+          id="password"
+          value={values.password}
           onChange={handleChange}
-        ></input>
-        <span className="register-form__error-text">
-          {errors.password || ''}
+          required
+          minLength={8}
+          maxLength={30}
+        />
+        <span
+          className={`form__error-span ${
+            errors.password &&
+            'form__error-span_visible'
+          }`}
+        >
+          {errors.password}
         </span>
-        <button
-          className={`link-button register-form__button ${!isValid && "register-form__button_disabled"}`}
-          type="submit"
-          disabled={!isValid}
-        >
-          Зарегистрироваться
-        </button>
-      </form>
-      <div className="register__under-button">
-        <p className="register__under-button-text">
-          Уже зарегистрированы?
-        </p>
-        <Link
-          className="link register__link"
-          to="/signin"
-        >
-          Войти
-        </Link>
-      </div>
-    </main>
+      </Form>
+    </section>
   );
 }
 

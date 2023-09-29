@@ -1,84 +1,93 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import useFormWithValidation from '../../utils/useFormWithValidation';
+import Form from '../Form/Form';
 
-function Login({ onLogin }) {
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
+
+const Login = ({ onLogin }) => {
   const {
     values,
     handleChange,
-    resetForm,
     errors,
     isValid,
+    formRef,
   } = useFormWithValidation();
 
-  useEffect(() => {
-    resetForm();
-  }, [resetForm]);
-
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin({
-      email: values.email,
-      password: values.password,
-    });
-    resetForm();
-  }
+
+    onLogin(values);
+  };
 
   return (
-    <main className="login">
-      <form
-        className="login-form"
+    <section className="login">
+      <Form
+        formRef={formRef}
+        isValid={isValid}
         onSubmit={handleSubmit}
-        formNoValidate
+        title="Рады видеть!"
+        buttonName="Войти"
+        redirectText="Ещё не зарегистрированы?"
+        redirectLink="Регистрация"
+        redirectPath="/signup"
       >
-        <p className="login-form__input-title">
+        <label
+          className="form__label"
+          htmlFor="email"
+        >
           E-mail
-        </p>
+        </label>
         <input
-          className="login-form__input"
+          className={`form__input ${
+            errors.email &&
+            'form__input_type_error'
+          }`}
           name="email"
           type="email"
-          required
+          id="email"
+          placeholder="Введите E-mail"
+          value={values.email}
           onChange={handleChange}
-          value={values.email || ''}
-        ></input>
-                <span className="register-form__error-text">
-          {errors.name || ''}
+          required
+        />
+        <span
+          className={`form__error-span ${
+            errors.email &&
+            'form__error-span_visible'
+          }`}
+        >
+          {errors.email}
         </span>
-        <p className="login-form__input-title">
+        <label
+          className="form__label"
+          htmlFor="password"
+        >
           Пароль
-        </p>
+        </label>
         <input
-          className="login-form__input"
+          className={`form__input ${
+            errors.password &&
+            'form__input_type_error'
+          }`}
           name="password"
           type="password"
-          required
-          value={values.password || ''}
+          id="password"
+          placeholder="Введите пароль"
+          value={values.password}
           onChange={handleChange}
-        ></input>
-                <span className="register-form__error-text">
-          {errors.password || ''}
+          required
+          minLength={8}
+          maxLength={30}
+        />
+        <span
+          className={`form__error-span form__error-span_type_login ${
+            errors.password &&
+            'form__error-span_visible'
+          }`}
+        >
+          {errors.password}
         </span>
-        <button
-          className={`link-button login-form__button ${!isValid && 'login-form__button_disabled'}`}
-          disabled={!isValid}
-        >
-          Войти
-        </button>
-      </form>
-      <div className="login__under-button">
-        <p className="login__under-button-text">
-          Ещё не зарегистрированы?
-        </p>
-        <Link
-          className="link login__link"
-          to="/signup"
-        >
-          Регистрация
-        </Link>
-      </div>
-    </main>
+      </Form>
+    </section>
   );
-}
+};
 
 export default Login;

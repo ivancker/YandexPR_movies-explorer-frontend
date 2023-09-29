@@ -1,131 +1,231 @@
-import logo from '../../images/logo.svg';
-import profile from '../../images/profile-button.svg';
 import {
-  useLocation,
   Link,
+  NavLink,
+  useLocation,
 } from 'react-router-dom';
 
-function Header({ onClick }) {
+import logo from '../../images/logo.svg';
+import profile from '../../images/profile-button.svg';
+
+function Header({
+  onChange,
+  isTablet,
+}) {
   const location = useLocation();
+  if (
+    localStorage.getItem('isLoggedIn')
+  ) {
+    return (
+      <>
+        {location.pathname === '/' && (
+          <header className="header header_page-landing">
+            <div className="header__content">
+              <Link
+                to="/"
+                className={`link-button header__link ${
+                  !isTablet
+                    ? 'hidden'
+                    : ''
+                }`}
+              >
+                <img
+                  src={logo}
+                  alt="Лого"
+                ></img>
+              </Link>
+              <button
+                className={`link-button header__content-burger-button ${
+                  isTablet
+                    ? ''
+                    : 'hidden'
+                }`}
+                onClick={onChange}
+              ></button>
+
+              <div
+                className={`link-buton header__links header__links_page_movies ${
+                  isTablet
+                    ? 'hidden'
+                    : ''
+                }`}
+              >
+                <Link
+                  to="/"
+                  className="link-button header__link"
+                >
+                  <img
+                    src={logo}
+                    alt="Лого"
+                  ></img>
+                </Link>
+                <div className="header__links-movies">
+                  <NavLink
+                    to="/movies"
+                    className={({
+                      isActive,
+                    }) =>
+                      isActive
+                        ? 'link header__movies-link header__movies-link_active'
+                        : 'link header__movies-link'
+                    }
+                  >
+                    Фильмы
+                  </NavLink>
+                  <NavLink
+                    to="/saved-movies"
+                    className={({
+                      isActive,
+                    }) =>
+                      isActive
+                        ? 'link header__movies-link header__movies-link_active'
+                        : 'link header__movies-link'
+                    }
+                  >
+                    Сохранённые фильмы
+                  </NavLink>
+                </div>
+                <Link
+                  className="link-button header__profile-button"
+                  to="/profile"
+                >
+                  <p className="header__profile-button-text">
+                    Аккаунт
+                  </p>
+                  <div className="header__profile-image-container">
+                    <img
+                      className="header__profile-image"
+                      src={profile}
+                      alt="Профиль - Кнопка - Картинка"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </header>
+        )}
+        {(location.pathname ===
+          '/movies' ||
+          location.pathname ===
+            '/saved-movies' ||
+          location.pathname ===
+            '/profile') && (
+          <header className="header-loggedin">
+            <div className="header__content header__content_page_movies">
+              <Link
+                to="/"
+                className={`link-button header__link ${
+                  !isTablet
+                    ? 'hidden'
+                    : ''
+                }`}
+              >
+                <img
+                  src={logo}
+                  alt="Логотип"
+                ></img>
+              </Link>
+              <button
+                className={`link-button header-loggedin__content-burger-button ${
+                  isTablet
+                    ? ''
+                    : 'hidden'
+                }`}
+                onClick={onChange}
+              ></button>
+
+              <div
+                className={`header__links header__links_page_movies ${
+                  isTablet
+                    ? 'hidden'
+                    : ''
+                }`}
+              >
+                <Link
+                  to="/"
+                  className="link-button header__link"
+                >
+                  <img
+                    src={logo}
+                    alt="Лого"
+                  ></img>
+                </Link>
+                <div className="header__links-movies">
+                  <NavLink
+                    to="/movies"
+                    className={({
+                      isActive,
+                    }) =>
+                      isActive
+                        ? 'link header-loggedin__movies-link header__movies-link_active'
+                        : 'link header-loggedin__movies-link'
+                    }
+                  >
+                    Фильмы
+                  </NavLink>
+                  <NavLink
+                    to="/saved-movies"
+                    className={({
+                      isActive,
+                    }) =>
+                      isActive
+                        ? 'link header-loggedin__movies-link header__movies-link_active'
+                        : 'link header-loggedin__movies-link'
+                    }
+                  >
+                    Сохранённые фильмы
+                  </NavLink>
+                </div>
+                <Link
+                  className="link-button header-loggedin__profile-button"
+                  to="/profile"
+                >
+                  <p className="header__profile-button-text">
+                    Аккаунт
+                  </p>
+                  <div className="header__profile-image-container">
+                    <img
+                      className="header__profile-image"
+                      src={profile}
+                      alt="Профиль - Кнопка - Картинка"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </header>
+        )}
+      </>
+    );
+  }
 
   return (
-    <>
-      {location.pathname === '/' && (
-        <header className="header">
+    <header className="header">
+      <div className="header__content">
+        <Link
+          to="/"
+          className="link-button header__link"
+        >
+          <img
+            src={logo}
+            alt="Лого"
+          ></img>
+        </Link>
+        <div className="header__links">
           <Link
-            className="link-button header__logo-link"
-            to="/"
+            to="/signup"
+            className="link header__signup-link"
           >
-            <img
-              className="header__logo"
-              src={logo}
-              alt="Лого - Фильмы"
-            />
+            Регистрация
           </Link>
-          <div className="header__nav">
-            <Link
-              className="link header__signup-link"
-              to="/signup"
-            >
-              Регистрация
-            </Link>
-            <Link
-              className="link header__signin-button"
-              to="/signin"
-            >
-              <p className="header__signin-button-text">
-                Войти
-              </p>
-            </Link>
-          </div>
-        </header>
-      )}
-      {(location.pathname ===
-        '/movies' ||
-        location.pathname ===
-          '/saved-movies' ||
-        location.pathname ===
-          '/profile') && (
-        <header className="header-white">
           <Link
-            className="link-button header__logo-link"
-            to="/"
+            className="link-button header__signin-button"
+            to="/signin"
           >
-            <img
-              className="header__logo"
-              src={logo}
-              alt="Лого - Фильмы"
-            />
+            Войти
           </Link>
-          <div className="header-white__nav">
-            <Link
-              className={
-                location.pathname ===
-                '/movies'
-                  ? 'link header-white__movies-link_bold'
-                  : 'link header-white__movies-link'
-              }
-              to="/movies"
-            >
-              Фильмы
-            </Link>
-            <Link
-              className={
-                location.pathname ===
-                '/saved-movies'
-                  ? 'link header-white__saved-link_bold'
-                  : 'link header-white__saved-link'
-              }
-              to="/saved-movies"
-            >
-              Сохранённые фильмы
-            </Link>
-          </div>
-          <Link
-            className="link-button header-white__profile-button"
-            to="/profile"
-          >
-            <p className="header-white__profile-button-text">
-              Аккаунт
-            </p>
-            <div className="header-white__profile-image-container">
-              <img
-                className="header-white__profile-image"
-                src={profile}
-                alt="Профиль - Кнопка - Картинка"
-              />
-            </div>
-          </Link>
-          <button
-            className="link-button header-white__nav-mob"
-            onClick={onClick}
-          />
-        </header>
-      )}
-      {(location.pathname ===
-        '/signin' ||
-        location.pathname ===
-          '/signup') && (
-        <header className="header-register">
-          <Link
-            className="header__logo-link"
-            to="/"
-          >
-            <img
-              className="header-register__logo"
-              src={logo}
-              alt="Лого - Фильмы"
-            />
-          </Link>
-          <h1 className="header-register__title">
-            {location.pathname ===
-            '/signin'
-              ? 'Рады видеть!'
-              : 'Добро пожаловать!'}
-          </h1>
-        </header>
-      )}
-    </>
+        </div>
+      </div>
+    </header>
   );
 }
 

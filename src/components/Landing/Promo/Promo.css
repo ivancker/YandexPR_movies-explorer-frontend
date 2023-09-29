@@ -9,7 +9,6 @@
 
 .promo__logo {
   padding-top: 75px;
-  padding-right: 70px;
   max-width: 310px;
   max-height: 304px;
 }
@@ -17,7 +16,6 @@
 .promo__info-title {
   margin: 0;
   padding-top: 75px;
-  padding-left: 70px;
   max-width: 640px;
   color: white;
   font-weight: 400;
@@ -40,7 +38,6 @@
 }
 
 .promo__info-button {
-  margin-left: 70px;
   margin-top: 146px;
   display: flex;
   align-items: center;

@@ -1,153 +1,23 @@
 .register {
-  max-width: 396px;
   display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-
-.register-form__input-title {
-  margin: 0;
-  padding-bottom: 5px;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 12px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #a0a0a0;
-  padding-top: 24px;
-}
-
-.register-form__input-title:first-child {
-  padding-top: 0;
-}
-
-.register-form__input {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #e8e8e8;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: left;
-  padding-bottom: 10px;
-}
-
-.register-form__input:focus {
-  outline: none;
-  border-bottom: 1px solid #3456f3;
-}
-
-.register-form__input::placeholder {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  color: #e8e8e8;
-}
-
-.register-form__button {
-  width: 100%;
-  background-color: #3456f3;
-  margin-top: 134px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: white;
-  border: none;
-  height: 45px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.register-form__button_disabled {
-  background-color: #F8F8F8;
-  color: #C2C2C2;
-  pointer-events: none;
-}
-
-.register__under-button {
-  display: flex;
-  margin: auto;
-  padding-top: 16px;
-  padding-bottom: 70px;
-}
-
-.register__under-button-text {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  color: #a0a0a0;
-}
-
-.register__link {
-  margin-left: 6px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0em;
-  color: #3456f3;
-  text-decoration: none;
-}
-
-.register-form__error-text {
-  margin: 0;
-  margin-top: 6px;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 12px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: red;
+  justify-content: center;
+  margin: 70px auto;
 }
 
 @media screen and (max-width: 768px) {
-  .login-form__error-text {
-    padding-bottom: 65px;
-  }
-
-  .register-form__button {
-    margin-top: 69px;
-  }
-
-  .register__under-button {
-    padding-bottom: 232px;
+  .register {
+    margin: 232px 186px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 660px) {
   .register {
-    width: 100%;
+    margin: 232px 30px;
   }
+}
 
-  .register-form {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-
-  .register-form__button {
-    margin-top: 157px;
-    font-size: 12px;
-    line-height: 14.52px;
-  }
-
-  .register__under-button {
-    padding-bottom: 30px;
-  }
-
-  .register__under-button-text {
-    font-size: 12px;
-    line-height: 14.52px;
-  }
-
-  .register__link {
-    font-size: 12px;
-    line-height: 14.52px;
+@media screen and (max-width: 425px) {
+  .register {
+    margin: 56px 30px 30px;
   }
 }
