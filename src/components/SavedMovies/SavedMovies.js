@@ -1,6 +1,5 @@
-import React from 'react';
+import { useState } from 'react';
 
-import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../Header/Header';
@@ -16,7 +15,7 @@ const SavedMovies = ({
   filteredSavedMovies,
   setFilteredSavedMovies,
 }) => {
-  const [isSavedMoviesSearched, setIsSavedMoviesSearched] = React.useState(false);
+  const [isSavedMoviesSearched, setIsSavedMoviesSearched] = useState(false);
 
   return (
     <section className="saved-movies">

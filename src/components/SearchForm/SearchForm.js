@@ -87,16 +87,17 @@ function SearchForm({
     if (pathname === '/movies') {
       showMovieSearch();
       return;
+    } else if (pathname === '/saved-movies') {
+      showSavedMovieSearch();
+      return;
     }
-
-    showSavedMovieSearch();
   };
 
   const toggleCheckbox = () => {
     if (isValid && pathname === '/movies') {
       setIsChecked(!isChecked);
       showMovieSearch();
-    } else if (movies.length !== 0) {
+    } else if (pathname === '/saved-movies' | movies.length !== 0) {
       setIsChecked(!isChecked);
       showSavedMovieSearch();
     } else {

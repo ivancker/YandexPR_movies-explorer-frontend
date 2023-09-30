@@ -5,7 +5,6 @@ import CurrentUserContext from '../../contexts/CurrentUserContext';
 import { updateUser } from '../../utils/MainApi';
 import { errorMessages, successMessages } from '../../utils/constants';
 import { useFormWithValidation } from '../../hooks/useFormWithValidation';
-import './Profile.css';
 
 const Profile = ({
   onSignOut,
@@ -64,16 +63,12 @@ const Profile = ({
         handleSuccessMessage(successMessages.profileEditing);
         setIsEditingProfile(false);
         resetForm({
-          name: '',
-          email: '',
+          name: values.name,
+          email: values.email,
         });
       })
       .catch(() => {
         handleErrorMessage(errorMessages.emailAlreadyExists);
-        resetForm({
-          name: '',
-          email: '',
-        });
       });
   };
 

@@ -4,7 +4,7 @@ import {
   useCallback,
 } from 'react';
 
-import { regExpUserName } from '../utils/constants';
+import { regExpUserName, regExpEmail, regExpPassword } from '../utils/constants';
 
 export function useFormWithValidation() {
   const formRef = useRef(null);
@@ -15,44 +15,52 @@ export function useFormWithValidation() {
     password: '',
     film: '',
   });
-  const [errors, setErrors] = useState(
-    {}
-  );
-  const [isValid, setIsValid] =
-    useState(false);
+  const [errors, setErrors] = useState({});
+  const [isValid, setIsValid] = useState(false);
 
   const handleChange = (e, form) => {
     const { name, value } = e.target;
+    let errorMessage = '';
 
-    const isName = name === 'name';
-    const isNameValid = isName
-      ? regExpUserName.test(value)
-      : true;
-    const errorMessage = !isNameValid
-      ? e.target.validationMessage ||
-        'Имя может содержать только латиницу, кириллицу, пробел или дефис.'
-      : e.target.validationMessage;
+    if (name === 'email') {
+      const isEmailValid = regExpEmail.test(value);
+      errorMessage = !isEmailValid
+        ? e.target.validationMessage || 'Введите корректный адрес электронной почты.'
+        : '';
+      setErrors({
+        ...errors,
+        [name]: errorMessage,
+      });
+    } else if (name === 'name') {
+      const isNameValid = regExpUserName.test(value);
+      errorMessage = !isNameValid
+        ? e.target.validationMessage || 'Имя может содержать только латиницу, кириллицу, пробел или дефис.'
+        : '';
+      setErrors({
+        ...errors,
+        [name]: errorMessage,
+      });
+    } else if (name === 'password') {
+      const isPasswordValid = regExpPassword.test(value);
+      errorMessage = !isPasswordValid
+        ? e.target.validationMessage || 'Пароль должен содержать цифавы и буквы.'
+        : '';
+      setErrors({
+        ...errors,
+        [name]: errorMessage,
+      });
+    }
 
     setValues({
       ...values,
       [name]: value,
     });
-    setErrors({
-      ...errors,
-      [name]: errorMessage,
-    });
-    setIsValid(
-      isNameValid &&
-        formRef.current.checkValidity()
-    );
+
+    setIsValid(formRef.current.checkValidity() && errorMessage === '');
   };
 
   const resetForm = useCallback(
-    (
-      newValues = {},
-      newErrors = {},
-      newIsValid = false
-    ) => {
+    (newValues = {}, newErrors = {}, newIsValid = false) => {
       setValues(newValues);
       setErrors(newErrors);
       setIsValid(newIsValid);

@@ -236,11 +236,10 @@ function App() {
 
   const deleteSavedMovieById = (id) => {
     deleteSavedMovie(id)
-      .then((res) => {
-        setSavedMovies((savedMovies) =>
-          savedMovies.filter(
-            (savedMovie) =>
-              savedMovie._id !== res._id
+      .then(() => {
+        setSavedMovies((prevSavedMovies) =>
+          prevSavedMovies.filter(
+            (savedMovie) => savedMovie._id !== id
           )
         );
         setIsActionPending(false);
@@ -250,23 +249,19 @@ function App() {
         setIsActionPending(false);
       });
   };
+  
 
-  const deleteSavedMovieWrapper = (
-    movieId
-  ) => {
+  const deleteSavedMovieWrapper = (movieId) => {
     if (movieId.length === 24) {
       deleteSavedMovieById(movieId);
       return;
     }
-
-    const movieToDelete =
-      savedMovies.find(
-        (savedMovie) =>
-          savedMovie.movieId === movieId
-      );
-    deleteSavedMovieById(
-      movieToDelete._id
-    );
+  
+    const movieToDelete = savedMovies.find((savedMovie) => savedMovie.movieId === movieId);
+    if (movieToDelete) {
+      deleteSavedMovieById(movieToDelete._id);
+      setSavedMovies((prevSavedMovies) => prevSavedMovies.filter((savedMovie) => savedMovie._id !== movieToDelete._id));
+    }
   };
 
   const fetchSavedMovies = () => {

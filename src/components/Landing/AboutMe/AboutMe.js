@@ -29,9 +29,15 @@ function AboutMe() {
             заниматься фриланс-заказами
             и ушёл с постоянной работы.
           </p>
-          <p className="about-me__github">
+          <a
+            className="link about-me__github"
+            href={'https://github.com/'}
+            target="_blank"
+            rel="noreferrer"
+            alt="Гитхаб"
+          >
             Github
-          </p>
+          </a>
           <img
             className="about-me__photo"
             src={photo}
