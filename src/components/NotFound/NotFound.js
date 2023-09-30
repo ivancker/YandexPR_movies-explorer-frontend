@@ -4,7 +4,7 @@ function NotFound() {
   const navigate = useNavigate();
 
   function PageBack() {
-    navigate(-1);
+    navigate(-4);
   }
 
   return (
