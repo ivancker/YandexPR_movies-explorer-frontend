@@ -71,7 +71,7 @@ const Profile = ({
         handleErrorMessage(errorMessages.emailAlreadyExists);
       });
   };
-
+  
   return (
     <>
       <Header isTablet={isTablet} onChange={onChange} />
@@ -124,8 +124,8 @@ const Profile = ({
               </fieldset>
               <div className="profile__form-editing">
                 <button
-                  disabled={!isValid}
-                  className={`link-button profile__form-editing-save-button ${!isValid && 'profile__form-editing-save-button_disabled'}`}
+                  disabled={!isValid || !values.email || errors.email}
+                  className={`link-button profile__form-editing-save-button ${(!isValid || !values.email || errors.email) && 'profile__form-editing-save-button_disabled'}`}
                   type="submit"
                 >
                   Сохранить

@@ -52,28 +52,35 @@ function MoviesCard({
     setIsLiked(isMovieLiked);
   }, [isMovieLiked]);
 
-  const handleLikeClick = async () => {
+  const handleLikeClick = () => {
     if (isActionPending) {
       return;
     }
-
     setIsActionPending(true);
-
-    try {
-      if (!isLiked) {
-        await addMovie(movieData);
-        setIsLiked(true);
-      } else {
-        await deleteMovie(
-          movieData.movieId
-        );
-        setIsLiked(false);
-      }
-    } catch (error) {
-      
-      console.error('Error:', error);
-    } finally {
-      setIsActionPending(false);
+    if (!isLiked) {
+      addMovie(movieData)
+        .then(() => {
+          setIsLiked(true);
+        })
+        .catch((error) => {
+          console.error(
+            'Ошибка при добавлении фильма:',
+            error
+          );
+          setIsLiked(false);
+        });
+    } else {
+      deleteMovie(movieData.movieId)
+        .then(() => {
+          setIsLiked(false);
+        })
+        .catch((error) => {
+          console.error(
+            'Ошибка удаления фильма:',
+            error
+          );
+          setIsLiked(true);
+        });
     }
   };
 
@@ -144,3 +151,9 @@ function MoviesCard({
 }
 
 export default MoviesCard;
+
+// if (isActionPending) {
+//   return;
+// }
+
+// setIsActionPending(true);

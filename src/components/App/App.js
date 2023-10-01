@@ -47,9 +47,15 @@ function App() {
     setIsMenuActive,
   ] = useState(false);
   const [isTablet, setIsTablet] =
-    useState(window.innerWidth <= TABLET_SCREEN_WIDTH);
+    useState(
+      window.innerWidth <=
+        TABLET_SCREEN_WIDTH
+    );
   const [isMobile, setIsMobile] =
-    useState(window.innerWidth <= MOBILE_SCREEN_WIDTH);
+    useState(
+      window.innerWidth <=
+        MOBILE_SCREEN_WIDTH
+    );
   const [isLoggedIn, setIsLoggedIn] =
     useState(false);
 
@@ -99,10 +105,12 @@ function App() {
 
   const handleResize = () => {
     setIsTablet(
-      window.innerWidth <= TABLET_SCREEN_WIDTH
+      window.innerWidth <=
+        TABLET_SCREEN_WIDTH
     );
     setIsMobile(
-      window.innerWidth <= MOBILE_SCREEN_WIDTH
+      window.innerWidth <=
+        MOBILE_SCREEN_WIDTH
     );
   };
 
@@ -220,27 +228,35 @@ function App() {
   const addMovieToSaved = (
     movieData
   ) => {
-    createMovie(movieData)
-      .then((res) => {
-        setSavedMovies([
-          ...savedMovies,
-          res,
-        ]);
-        setIsActionPending(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsActionPending(false);
-      });
+    return new Promise(
+      (resolve, reject) => {
+        createMovie(movieData)
+          .then((res) => {
+            setSavedMovies([
+              ...savedMovies,
+              res,
+            ]);
+            setIsActionPending(false);
+            resolve(res);
+          })
+          .catch((err) => {
+            console.error(err);
+            setIsActionPending(false);
+            reject(err);
+          });
+      }
+    );
   };
 
   const deleteSavedMovieById = (id) => {
     deleteSavedMovie(id)
       .then(() => {
-        setSavedMovies((prevSavedMovies) =>
-          prevSavedMovies.filter(
-            (savedMovie) => savedMovie._id !== id
-          )
+        setSavedMovies(
+          (prevSavedMovies) =>
+            prevSavedMovies.filter(
+              (savedMovie) =>
+                savedMovie._id !== id
+            )
         );
         setIsActionPending(false);
       })
@@ -249,19 +265,61 @@ function App() {
         setIsActionPending(false);
       });
   };
-  
 
-  const deleteSavedMovieWrapper = (movieId) => {
-    if (movieId.length === 24) {
-      deleteSavedMovieById(movieId);
-      return;
-    }
-  
-    const movieToDelete = savedMovies.find((savedMovie) => savedMovie.movieId === movieId);
-    if (movieToDelete) {
-      deleteSavedMovieById(movieToDelete._id);
-      setSavedMovies((prevSavedMovies) => prevSavedMovies.filter((savedMovie) => savedMovie._id !== movieToDelete._id));
-    }
+  const deleteSavedMovieWrapper = (
+    movieId
+  ) => {
+    return new Promise(
+      (resolve, reject) => {
+        const handleDelete =
+          async () => {
+            try {
+              if (
+                movieId.length === 24
+              ) {
+                await deleteSavedMovieById(
+                  movieId
+                );
+              } else {
+                const movieToDelete =
+                  savedMovies.find(
+                    (savedMovie) =>
+                      savedMovie.movieId ===
+                      movieId
+                  );
+                if (movieToDelete) {
+                  await deleteSavedMovieById(
+                    movieToDelete._id
+                  );
+                } else {
+                  const error =
+                    new Error(
+                      'Фильм не найден в сохраненных фильмах'
+                    );
+                  throw error;
+                }
+              }
+
+              setSavedMovies(
+                (prevSavedMovies) =>
+                  prevSavedMovies.filter(
+                    (savedMovie) =>
+                      savedMovie._id !==
+                      movieId
+                  )
+              );
+              setIsActionPending(false);
+              resolve();
+            } catch (error) {
+              console.error(error);
+              setIsActionPending(false);
+              reject(error);
+            }
+          };
+
+        handleDelete();
+      }
+    );
   };
 
   const fetchSavedMovies = () => {
@@ -299,7 +357,7 @@ function App() {
   useEffect(() => {
     fetchSavedMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filteredMovies, isLoggedIn]);
+  }, [isLoggedIn]);
 
   useEffect(() => {
     checkToken();
