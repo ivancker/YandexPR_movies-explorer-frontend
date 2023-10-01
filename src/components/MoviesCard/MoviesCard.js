@@ -19,8 +19,8 @@ function MoviesCard({
   addMovie,
   deleteMovie,
   likedMovies,
-  setIsActionPending,
   isActionPending,
+  setIsActionPending,
   _id,
 }) {
   const movieData = {
@@ -57,17 +57,14 @@ function MoviesCard({
       return;
     }
     setIsActionPending(true);
+
     if (!isLiked) {
       addMovie(movieData)
         .then(() => {
           setIsLiked(true);
         })
         .catch((error) => {
-          console.error(
-            'Ошибка при добавлении фильма:',
-            error
-          );
-          setIsLiked(false);
+          console.error("Error adding movie:", error);
         });
     } else {
       deleteMovie(movieData.movieId)
@@ -75,11 +72,7 @@ function MoviesCard({
           setIsLiked(false);
         })
         .catch((error) => {
-          console.error(
-            'Ошибка удаления фильма:',
-            error
-          );
-          setIsLiked(true);
+          console.error("Error deleting movie:", error);
         });
     }
   };
@@ -151,9 +144,3 @@ function MoviesCard({
 }
 
 export default MoviesCard;
-
-// if (isActionPending) {
-//   return;
-// }
-
-// setIsActionPending(true);

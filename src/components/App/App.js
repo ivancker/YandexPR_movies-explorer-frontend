@@ -236,8 +236,10 @@ function App() {
               ...savedMovies,
               res,
             ]);
+            // setLikedMovies([...likedMovies, movieData]);
             setIsActionPending(false);
             resolve(res);
+            setLikedMovies([...likedMovies, res]);
           })
           .catch((err) => {
             console.error(err);
@@ -259,6 +261,7 @@ function App() {
             )
         );
         setIsActionPending(false);
+        setLikedMovies(likedMovies.filter((savedMovie) => savedMovie._id !== id));
       })
       .catch((err) => {
         console.log(err);
@@ -425,6 +428,7 @@ function App() {
                   likedMovies={
                     likedMovies
                   }
+                  setLikedMovies={setLikedMovies}
                 />
               }
             />

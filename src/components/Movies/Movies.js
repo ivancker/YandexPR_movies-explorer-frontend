@@ -22,6 +22,7 @@ function Movies({
   likedMovies,
   setIsActionPending,
   isActionPending,
+  setLikedMovies,
 }) {
   const [searchError, setSearchError] = useState('');
   const [cardsToShow, setCardsToShow] = useState(0);
@@ -76,6 +77,7 @@ function Movies({
             deleteMovie={deleteMovie}
             searchError={searchError}
             cardsToShow={cardsToShow}
+            setLikedMovies={setLikedMovies}
           />
           {filteredMovies?.length > cardsToShow && (
             <button
