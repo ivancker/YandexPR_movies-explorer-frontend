@@ -62,19 +62,31 @@ function SearchForm({
 
   const showMovieSearch = () => {
     setIsLoading(true);
-
-    getAllMovies()
-      .then((res) => {
-        setSearchError('');
-        setMovies(res);
-        setIsMoviesSearched(true);
-      })
-      .catch(() =>
-        setSearchError(
-          'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз',
-        ),
-      )
-      .finally(() => setIsLoading(false));
+    const allMoviesFromLocalStorage = JSON.parse(localStorage.getItem('allMovies'));
+    if (allMoviesFromLocalStorage && allMoviesFromLocalStorage.length > 0) {
+      const filteredMovies = allMoviesFromLocalStorage.filter((movie) => {
+        const searchFilterAll =
+          movie.nameEN.toLowerCase().includes(values.film.toLowerCase().trim()) ||
+          movie.nameRU.toLowerCase().includes(values.film.toLowerCase().trim());
+        return searchFilterAll;
+      });
+      setMovies(filteredMovies);
+      setIsMoviesSearched(true);
+      setIsLoading(false);
+    } else {
+      getAllMovies()
+        .then((res) => {
+          setSearchError('');
+          setMovies(res);
+          setIsMoviesSearched(true);
+          localStorage.setItem('allMovies', JSON.stringify(res));
+        })
+        .catch(() =>
+          setSearchError(
+            'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз',
+          ))
+        .finally(() => setIsLoading(false));
+    }
   };
 
   const showSavedMovieSearch = () => {

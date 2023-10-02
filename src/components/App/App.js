@@ -236,7 +236,6 @@ function App() {
               ...savedMovies,
               res,
             ]);
-            // setLikedMovies([...likedMovies, movieData]);
             setIsActionPending(false);
             resolve(res);
             setLikedMovies([...likedMovies, res]);
@@ -251,22 +250,24 @@ function App() {
   };
 
   const deleteSavedMovieById = (id) => {
-    deleteSavedMovie(id)
-      .then(() => {
-        setSavedMovies(
-          (prevSavedMovies) =>
-            prevSavedMovies.filter(
-              (savedMovie) =>
-                savedMovie._id !== id
-            )
-        );
-        setIsActionPending(false);
-        setLikedMovies(likedMovies.filter((savedMovie) => savedMovie._id !== id));
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsActionPending(false);
-      });
+    return new Promise((resolve, reject) => {
+      deleteSavedMovie(id)
+        .then(() => {
+          setSavedMovies((prevSavedMovies) =>
+            prevSavedMovies.filter((savedMovie) => savedMovie._id !== id)
+          );
+          setLikedMovies((prevLikedMovies) =>
+            prevLikedMovies.filter((likedMovie) => likedMovie._id !== id)
+          );
+          setIsActionPending(false);
+          resolve();
+        })
+        .catch((err) => {
+          console.error(err);
+          setIsActionPending(false);
+          reject(err);
+        });
+    });
   };
 
   const deleteSavedMovieWrapper = (
