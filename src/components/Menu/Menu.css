@@ -1,0 +1,146 @@
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu_active {
+  transform: translateX(32.2%);
+}
+
+.menu__overlay {
+  width: 0;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.3;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu__overlay_active {
+  width: 32.2%;
+  height: 100%;
+  right: 100%;
+}
+
+.menu__content {
+  width: 67.8%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__items {
+  padding: 0;
+  padding-bottom: 250px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.menu__item {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 29px;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: #000;
+  padding-bottom: 5px;
+}
+
+.menu__profile-button {
+  margin-bottom: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 12px;
+  text-decoration: none;
+  width: 100px;
+  height: 32px;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0px 3px 14px 0px #00000014;
+}
+
+.menu__link_active {
+  border-bottom: 2px solid #000;
+}
+
+.menu__close-button {
+  background-image: url(../../images/nav-close.svg);
+  background-position: center;
+  background-color: transparent;
+  width: 22px;
+  height: 22px;
+  border: none;
+  padding: 0;
+  margin: 27px 27px 10px auto;
+  cursor: pointer;
+}
+
+.menu__profile-button {
+  margin-bottom: 90px;
+}
+
+.menu__profile-text {
+  margin: 0px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0px;
+  padding-right: 7px;
+}
+
+.menu__profile-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: #f9f9f9;
+  border-radius: 13px;
+}
+
+.menu__profile-image {
+  width: 10.38px;
+  height: 10.67px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 425px) {
+  .menu_active {
+    transform: translateX(0%);
+  }
+
+  .menu__content {
+    width: 100%;
+  }
+
+  .menu__close-button {
+    margin: 18px 18px 105px auto;
+  }
+
+  .menu__item {
+    margin-bottom: 25px;
+  }
+
+  .menu__link {
+    padding-bottom: 7px;
+  }
+
+  .menu__profile-button {
+    margin-bottom: 46px;
+  }
+}

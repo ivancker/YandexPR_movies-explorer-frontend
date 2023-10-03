@@ -51,6 +51,9 @@
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
 
 .about-me__photo {

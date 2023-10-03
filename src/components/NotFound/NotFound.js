@@ -1,11 +1,10 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function NotFound() {
   const navigate = useNavigate();
 
   function PageBack() {
-    navigate(-1);
+    navigate(-4);
   }
 
   return (

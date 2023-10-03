@@ -1,0 +1,62 @@
+.filter-checkbox {
+  margin-top: 21px;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 48px;
+  position: relative;
+}
+
+.filter-checkbox__input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.filter-checkbox__label {
+  width: 36px;
+  height: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 14px;
+}
+
+.filter-checkbox__input + .filter-checkbox__label {
+  background-image: url(../../images/smalltumboff.svg);
+}
+
+.filter-checkbox__input:checked + .filter-checkbox__label {
+  background-image: url(../../images/smalltumbon.svg);
+}
+
+.filter-checkbox__name {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-checkbox {
+    justify-content: flex-end;
+    padding-bottom: 61px;
+    margin-top: 18px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .filter-checkbox {
+    justify-content: center;
+    padding-bottom: 51px;
+    margin-top: 29px;
+  }
+
+  .filter-checkbox__name {
+    font-size: 11px;
+  }
+
+  .filter-checkbox__label {
+    margin-right: 13px;
+  }
+}

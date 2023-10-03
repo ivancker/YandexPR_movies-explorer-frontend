@@ -91,6 +91,10 @@
     grid-template-columns: auto auto;
     gap: 10px;
   }
+
+  .techs__list-text {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 320px) {

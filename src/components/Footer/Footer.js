@@ -11,12 +11,26 @@ function Footer() {
           <p className="footer__copyright">
             © 2023
           </p>
-          <p className="footer__yandex">
+          <a
+            className="link footer__yandex"
+            href={
+              'https://practicum.yandex.ru/'
+            }
+            target="_blank"
+            rel="noreferrer"
+            alt="Яндекс Практикум"
+          >
             Яндекс.Практикум
-          </p>
-          <p className="footer__github">
+          </a>
+          <a
+            className="link footer__github"
+            href={'https://github.com/'}
+            target="_blank"
+            rel="noreferrer"
+            alt="Гитхаб"
+          >
             Github
-          </p>
+          </a>
         </div>
       </div>
     </footer>

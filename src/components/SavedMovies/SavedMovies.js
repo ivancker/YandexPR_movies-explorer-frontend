@@ -1,34 +1,41 @@
-import SearchForm from '../Movies/SearchForm/SearchForm';
-import MoviesCard from '../Movies/MoviesCard/MoviesCard';
+import { useState } from 'react';
 
-import image1 from '../../images/card1.png';
-import image2 from '../../images/card2.png';
-import image3 from '../../images/card3.png';
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import Header from '../Header/Header';
 
-function SavedMovies() {
+const SavedMovies = ({
+  isMobile,
+  isTablet,
+  onChange,
+  savedMovies,
+  setMovies,
+  setIsLoading,
+  deleteMovie,
+  filteredSavedMovies,
+  setFilteredSavedMovies,
+}) => {
+  const [isSavedMoviesSearched, setIsSavedMoviesSearched] = useState(false);
+
   return (
-    <main className='saved-movies'>
-      <SearchForm />
-      <section className="saved-movies-container">
-        <MoviesCard
-          movieName="33 слова о дизайне"
-          movieImage={image1}
-          movieDuration="1ч42м"
-        />
-        <MoviesCard
-          movieName="Киноальманах «100 лет
-    дизайна»"
-          movieImage={image2}
-          movieDuration="1ч42м"
-        />
-        <MoviesCard
-          movieName="В погоне за Бенкси"
-          movieImage={image3}
-          movieDuration="1ч42м"
-        />
-      </section>
-    </main>
+    <section className="saved-movies">
+      <Header isTablet={isTablet} onChange={onChange} />
+      <SearchForm
+        setMovies={setMovies}
+        movies={savedMovies}
+        setFilteredMovies={setFilteredSavedMovies}
+        setIsLoading={setIsLoading}
+        isSavedMoviesSearched={isSavedMoviesSearched}
+        setIsSavedMoviesSearched={setIsSavedMoviesSearched}
+      />
+      <MoviesCardList
+        movies={filteredSavedMovies}
+        isMobile={isMobile}
+        deleteMovie={deleteMovie}
+        isSavedMoviesSearched={isSavedMoviesSearched}
+      />
+    </section>
   );
-}
+};
 
 export default SavedMovies;

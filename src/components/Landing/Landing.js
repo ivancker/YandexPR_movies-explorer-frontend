@@ -1,12 +1,15 @@
+import React from 'react';
 import Promo from './Promo/Promo';
 import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
+import Header from '../Header/Header';
 
-function Landing() {
+const Main = ({ isTablet, onChange }) => {
   return (
-    <main className="landing">
+    <main>
+      <Header isTablet={isTablet} onChange={onChange} />
       <Promo />
       <AboutProject />
       <Techs />
@@ -14,6 +17,6 @@ function Landing() {
       <Portfolio />
     </main>
   );
-}
+};
 
-export default Landing;
+export default Main;
