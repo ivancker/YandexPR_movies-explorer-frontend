@@ -1,4 +1,4 @@
-import photo from '../../../images/photo.png';
+import photo from '../../../images/ttt.jpg';
 
 function AboutMe() {
   return (
